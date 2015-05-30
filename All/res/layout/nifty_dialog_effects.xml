@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"  
+        >
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <Button 
+            android:id="@+id/fadein"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#9988ff" 
+            android:text="fadein"
+            android:onClick="button_onclick"/>
+        <Button 
+            android:id="@+id/slideright"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#998888"
+            android:text="slideright"  
+            android:onClick="button_onclick"/>
+        <Button 
+            android:id="@+id/slideleft"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#998800"
+            android:text="slideleft"  
+            android:onClick="button_onclick"/>
+         
+            
+        
+        <Button 
+            android:id="@+id/slidetop"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#996600"
+            android:text="slidetop"  
+            android:onClick="button_onclick"/>
+        
+        <Button 
+            android:id="@+id/slideBottom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#994400"
+            android:text="slideBottom"  
+            android:onClick="button_onclick"/>
+         
+        <Button 
+            android:id="@+id/newspager"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#992200"
+            android:text="newspager"  
+            android:onClick="button_onclick"/>
+        
+         
+        <Button 
+            android:id="@+id/fall"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#99aa00"
+            android:text="fall"  
+            android:onClick="button_onclick"/>
+            
+        <Button 
+            android:id="@+id/sidefall"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#99cc00"
+            android:text="sidefall"  
+            android:onClick="button_onclick"/>
+     
+        <Button 
+            android:id="@+id/fliph"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#99ee00"
+            android:text="fliph"  
+            android:onClick="button_onclick"/>
+            
+        <Button 
+            android:id="@+id/flipv"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#228866"
+            android:text="flipv"  
+            android:onClick="button_onclick"/>
+
+        <Button 
+            android:id="@+id/rotatebottom"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#448866"
+            android:text="rotatebottom"  
+            android:onClick="button_onclick"/>
+        
+        <Button 
+            android:id="@+id/rotateleft"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#668866"
+            android:text="rotateleft"  
+            android:onClick="button_onclick"/>
+            <Button 
+            android:id="@+id/slit"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#bb8866"
+            android:text="slit"  
+            android:onClick="button_onclick"/>
+        <Button 
+            android:id="@+id/shake"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" 
+            android:background="#ff8800"
+            android:text="shake" 
+            android:onClick="button_onclick"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

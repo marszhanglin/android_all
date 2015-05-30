@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mars="http://schemas.android.com/apk/res/mars.all"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_bg"  > 
+    <!-- 
+    xmlns:mars="http://schemas.android.com/apk/res/com.example.qq50style"
+    自定义属性的命名空间
+     -->
+    <mars.all.view.qq50style.MyHorizontalScrollView
+ 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        mars:rightPadding="100dp"
+        android:id="@+id/activity_main_myhorizontal"
+         >
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <include layout="@layout/left_menu"/>
+            
+            <LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/top1"/>
+    <include layout="@layout/staggered_gridview_main"/>
+     
+</LinearLayout>
+        </LinearLayout> 
+    </mars.all.view.qq50style.MyHorizontalScrollView
+>
+
+</RelativeLayout>
+<!-- <include layout="@layout/top2"/>
+     <LinearLayout android:layout_width="match_parent"
+         android:layout_height="5dp"
+         android:background="#ffffff">
+         <ImageView android:layout_width="100dp"
+             android:layout_height="fill_parent" 
+             android:background="@drawable/line_thred"
+             android:id="@+id/activity_main_imageview_top3"
+             />
+     </LinearLayout>
+     <android.support.v4.view.ViewPager
+        	android:id="@+id/activity_main_view_pager"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center"
+        	android:layout_weight="1" > 
+        </android.support.v4.view.ViewPager>   -->

@@ -1,0 +1,259 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+       <RelativeLayout  
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:background="@drawable/title_bar"
+  			android:gravity="center_vertical"
+  			 >   
+  			 <Button
+            android:id="@+id/site_picture_btn_back"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="返回"
+            android:textSize="14sp"
+            android:textColor="#fff" 
+            android:background="@drawable/title_btn_back"
+            android:onClick="fh"
+		    />    
+      		<TextView 
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="YOYO动画"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff" />  
+      		<Button
+                android:id="@+id/contact_group_find"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/title_btn_right"
+                android:onClick="main_code"
+                android:text="主要CODE"
+                android:textColor="#fff"
+                android:textSize="12dp" />
+				</RelativeLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_marginTop="45dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Tada"
+                android:padding="10dp"
+                android:text="Tada"
+                android:textColor="#aa7799"
+                android:textSize="30dp" /> 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Flash"
+                android:text="Flash"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Pulse"
+                android:text="Pulse"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="RubberBand"
+                android:text="RubberBand"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Shake"
+                android:text="Shake"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Swing"
+                android:text="Swing"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Wobble"
+                android:text="Wobble"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Bounce"
+                android:text="Bounce"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="StandUp"
+                android:text="StandUp"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="Wave"
+                android:text="Wave"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#227799" />
+
+            <Button 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="FlipInX"
+                android:text="FlipInX"
+                android:textColor="#aa7799"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#227799"
+                android:text="
+                Attension:\nFlash, Pulse, RubberBand, Shake, Swing, Wobble, Bounce, Tada, StandUp, Wave \n
+                Special:\nHinge, RollIn, RollOut,Landing,TakingOff,DropOut\n
+                Bounce:\nBounceIn, BounceInDown, BounceInLeft, BounceInRight, BounceInUp\n
+                Fade:\nFadeIn, FadeInUp, FadeInDown, FadeInLeft, FadeInRight\n
+                \nFadeOut, FadeOutDown, FadeOutLeft, FadeOutRight, FadeOutUp\n
+                Flip:\nFlipInX, FlipOutX, FlipOutY\n
+                Rotate:\nRotateIn, RotateInDownLeft, RotateInDownRight, RotateInUpLeft, RotateInUpRight\n
+               \nRotateOut, RotateOutDownLeft, RotateOutDownRight, RotateOutUpLeft, RotateOutUpRight\n
+                Slide:\nSlideInLeft, SlideInRight, SlideInUp, SlideInDown\n
+                \nSlideOutLeft, SlideOutRight, SlideOutUp, SlideOutDown\n
+                Zoom:\nZoomIn, ZoomInDown, ZoomInLeft, ZoomInRight, ZoomInUp\n
+                \nZoomOut, ZoomOutDown, ZoomOutLeft, ZoomOutRight, ZoomOutUp\n
+                YoYo.with(Techniques.Tada).duration(700).playOn(findViewById(R.id.hello));" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout><!-- 
+总共有一下效果
+
+Attension
+
+Flash, Pulse, RubberBand, Shake, Swing, Wobble, Bounce, Tada, StandUp, Wave
+
+Special
+
+Hinge, RollIn, RollOut,Landing,TakingOff,DropOut
+
+Bounce
+
+BounceIn, BounceInDown, BounceInLeft, BounceInRight, BounceInUp
+
+Fade
+
+FadeIn, FadeInUp, FadeInDown, FadeInLeft, FadeInRight
+
+FadeOut, FadeOutDown, FadeOutLeft, FadeOutRight, FadeOutUp
+
+Flip
+
+FlipInX, FlipOutX, FlipOutY
+
+Rotate
+
+RotateIn, RotateInDownLeft, RotateInDownRight, RotateInUpLeft, RotateInUpRight
+
+RotateOut, RotateOutDownLeft, RotateOutDownRight, RotateOutUpLeft, RotateOutUpRight
+
+Slide
+
+SlideInLeft, SlideInRight, SlideInUp, SlideInDown
+
+SlideOutLeft, SlideOutRight, SlideOutUp, SlideOutDown
+
+Zoom
+
+ZoomIn, ZoomInDown, ZoomInLeft, ZoomInRight, ZoomInUp
+
+ZoomOut, ZoomOutDown, ZoomOutLeft, ZoomOutRight, ZoomOutUp
+
+
+ -->

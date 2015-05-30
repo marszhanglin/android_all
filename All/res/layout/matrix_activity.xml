@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" 
+    android:gravity="center_horizontal">
+       <RelativeLayout  
+  			android:layout_width="fill_parent"
+  			android:layout_height="45dp"
+  			android:background="@drawable/title_bar"
+  			android:gravity="center_vertical"
+  			 >   
+  			 <Button
+            android:id="@+id/site_picture_btn_back"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="返回"
+            android:textSize="14sp"
+            android:textColor="#fff" 
+            android:background="@drawable/title_btn_back"
+            android:onClick="fh"
+		    />    
+      		<TextView 
+      		    android:id="@+id/gesture_detector_top_tv"
+        		android:layout_width="wrap_content" 
+        		android:layout_height="wrap_content" 
+        		android:text="矩阵Matrix对图像的变换"
+        		android:layout_centerInParent="true"
+        		android:textSize="20sp"		
+				android:textColor="#ffffff"
+				android:ellipsize="marquee"
+				android:singleLine="true"
+				android:marqueeRepeatLimit="marquee_forever"
+				android:focusable="true"
+				android:focusableInTouchMode="true"
+				android:layout_marginLeft="120dp"
+				android:layout_marginRight="120dp" />  
+      		<Button
+                android:id="@+id/contact_group_find"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/title_btn_right"
+                android:onClick="main_code"
+                android:text="操作"
+                android:textColor="#fff"
+                android:textSize="12dp" />
+				</RelativeLayout>
+				<FrameLayout 
+				    android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:layout_marginTop="45dp"
+				    >
+				    
+				    <ScrollView 
+  				     android:id="@+id/gesture_detector_content_scrollview"
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent" 
+				     >
+				     <TextView 
+				         android:id="@+id/gesture_detector_content_tv"
+				         android:layout_width="wrap_content"
+				         android:layout_height="wrap_content"
+				         android:textStyle="italic"/>
+				     
+				 </ScrollView>  
+				 
+  				 <ImageView android:layout_width="fill_parent"
+  				     android:layout_height="fill_parent"
+  				     android:src="@drawable/fzaj_xxgg"
+  				     android:id="@+id/matrix_image" 
+  				     android:scaleType="matrix"
+
+  				      />
+				</FrameLayout>
+  				 
+  				 
+</RelativeLayout>

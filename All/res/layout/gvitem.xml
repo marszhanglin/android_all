@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:id="@+id/gvitem_liner"
+    
+    >
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#aaeeeeee"
+        android:orientation="vertical"
+        >
+        <TextView 
+        android:id="@+id/gvitem_tv_content"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:textColor="#555555"
+        android:padding="5dp"
+        android:text="asifsaiidasadasdasdadaddadadaddsaddas"
+        />
+    <ImageView 
+        android:id="@+id/gvitem_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="fitXY" 
+        />
+    <TextView 
+        android:id="@+id/gvitem_tv_time"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:textColor="#555555"
+        android:text="1990-2-28"
+        android:padding="5dp"
+        />
+        
+    </LinearLayout>
+    
+<!--         android:layout_width="60dip"
+        android:layout_height="60dip" -->
+     <!--<TextView 
+        android:id="@+id/gvitem_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        /> -->
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00ffffff"
+    android:orientation="vertical" 
+    android:gravity="center_horizontal">
+       
+				<FrameLayout android:layout_width="fill_parent"
+				    android:layout_height="fill_parent"
+				    android:layout_marginTop="45dp"
+				    android:background="#00ffffff">
+				    <mars.all.view.image.ZoomImageView
+				        android:layout_width="fill_parent" 
+				        android:layout_height="fill_parent" 
+				        android:id="@+id/test1_picture"
+				       android:src="@drawable/zoom_im" 
+				       android:scaleType="matrix"
+				        />
+				    <TextView
+				        android:id="@+id/demo6_time" 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:text="2014-12-05"
+				        android:textColor="#000"/> 
+				        <ImageView android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:src="@drawable/zoom_1"
+				            android:layout_marginTop="30dp"
+				            android:layout_marginLeft="10dp"/>
+				        <ImageView android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:src="@drawable/zoom_2"
+				            android:layout_marginTop="400dp"
+				            android:layout_marginLeft="310dp"/> 
+				</FrameLayout> 
+</RelativeLayout>
