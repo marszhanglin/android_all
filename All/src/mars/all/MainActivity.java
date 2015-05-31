@@ -23,9 +23,12 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+
+
 /**
- * 2014-11-6下午2:09:05 类MainActivity
- * @author Mars zhang
+ *	首页
+ * @author Administrator
+ *
  */
 public class MainActivity extends Activity {
 	/**自定义的横向滚动*/
@@ -43,13 +46,13 @@ public class MainActivity extends Activity {
 		staggeredGridView=(StaggeredGridView) findViewById(R.id.staggeredGridView1); 
 		List<ItemDataAtMain> items=new ArrayList<ItemDataAtMain>();
 		ItemDataAtMain item1=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据1  ", new Date());
-		ItemDataAtMain item2=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据 2 ", new Date());
-		ItemDataAtMain item3=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 3", new Date());
-		ItemDataAtMain item4=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据4  ", new Date());
-		ItemDataAtMain item5=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据5  ", new Date());
-		ItemDataAtMain item6=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据6  ", new Date());
-		ItemDataAtMain item7=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据瀑布流布局内部的数据item gridview的item数据 7 ", new Date());
-		ItemDataAtMain item8=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 瀑布流布局内部的数据item gridview的item数据 8", new Date());
+		ItemDataAtMain item2=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item3=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item4=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item5=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item6=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item7=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item8=new ItemDataAtMain("没用", new Date());
 		ItemDataAtMain item9=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据9  ", new Date());
 		ItemDataAtMain item10=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据10  ", new Date());
 		items.add(item1);
