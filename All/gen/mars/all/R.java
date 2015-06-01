@@ -89,12 +89,13 @@ containing a value of this type.
         public static final int pager_image7=0x7f02001e;
         public static final int pager_image8=0x7f02001f;
         public static final int pager_image9=0x7f020020;
-        public static final int title_bar=0x7f020021;
-        public static final int title_btn_back=0x7f020022;
-        public static final int title_btn_right=0x7f020023;
-        public static final int zoom_1=0x7f020024;
-        public static final int zoom_2=0x7f020025;
-        public static final int zoom_im=0x7f020026;
+        public static final int qq_dialog_default_icon=0x7f020021;
+        public static final int title_bar=0x7f020022;
+        public static final int title_btn_back=0x7f020023;
+        public static final int title_btn_right=0x7f020024;
+        public static final int zoom_1=0x7f020025;
+        public static final int zoom_2=0x7f020026;
+        public static final int zoom_im=0x7f020027;
     }
     public static final class id {
         public static final int action_settings=0x7f090036;
@@ -258,7 +259,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:rightPadding
+          @attr name mars.all:rightPadding
         */
         public static final int SlidingMenu_rightPadding = 0;
         /** Attributes that can be used with a StaggeredGridView.
@@ -287,7 +288,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:drawSelectorOnTop
+          @attr name mars.all:drawSelectorOnTop
         */
         public static final int StaggeredGridView_drawSelectorOnTop = 0;
         /**
@@ -301,7 +302,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:numColumns
+          @attr name mars.all:numColumns
         */
         public static final int StaggeredGridView_numColumns = 1;
     };
