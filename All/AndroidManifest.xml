@@ -32,13 +32,13 @@
         <activity android:name=".activity.at_staggeredgrid.viewpager.MyviewPagerActivity"></activity>
         <activity android:name=".activity.at_staggeredgrid.viewpager.MyviewPagerActivity01"></activity>
         <activity android:name=".activity.at_staggeredgrid.viewpager.DifferentViewPagerActivity"></activity>
+		<activity android:name="mars.all.activity.mediaplay.MediaActivity"></activity>        
         
         <!-- 2仿qq锁屏弹窗   excludeFromRecents控制不住Recents列表中显示-->
         <activity android:name=".activity.at_staggeredgrid.lockscrren.QQLockScreenActivity"
             android:launchMode="singleInstance"
             android:excludeFromRecents="true"
             android:taskAffinity=""></activity>
-        
         
         
         

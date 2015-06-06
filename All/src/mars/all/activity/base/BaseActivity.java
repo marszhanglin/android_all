@@ -111,13 +111,6 @@ public class BaseActivity extends Activity {
     
     /**
      * 
-     * @param http  post«Î«Û
-     * @return
-     * @throws IOException
-     * @throws ClientProtocolException
-     */ 
-    /**
-     * 
      * @param strUrl   http://localhost:8080/ecssp/jfs/mobile/androidIndex/login
      * @param entity_str   username=sysadmin&password=D860103725C09C63BFDFB0D6962EC1AB&imei=null
      * @return
@@ -147,4 +140,72 @@ public class BaseActivity extends Activity {
         }
         return strResult;
     }
+
+
+
+
+
+    @Override
+	protected void onDestroy() {
+		super.onDestroy();
+	}
+
+
+
+
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	}
+
+
+
+
+
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+	}
+
+
+
+
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	}
+
+
+
+
+
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+	}
+
+
+
+
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+	}
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
