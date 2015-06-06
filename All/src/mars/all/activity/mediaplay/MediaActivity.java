@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 /**
- * 背景音乐
+ * 背景音乐   整个过程最好看下文档中的图例
  * @author EVECOM-PC
  *
  */
@@ -24,7 +24,17 @@ public class MediaActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.media_activity);
 		mediaPlayer=MediaPlayer.create(MediaActivity.this, R.raw.imissyou);
-		mediaPlayer.start();
+		
+		//设置播放完毕监听接口  让他重新播放一遍
+		mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+			@Override
+			public void onCompletion(MediaPlayer arg0) {
+				Log.v("mars","mediaPlayer.getCurrentPosition:"+mediaPlayer.getCurrentPosition());
+				//跳回开始位置重新播放
+				mediaPlayer.seekTo(0);
+				mediaPlayer.start();
+			}
+		});
 	}
 
 	 
@@ -39,50 +49,51 @@ public class MediaActivity extends BaseActivity {
 		mediaPlayer.pause();
 		//记住当前位置
 		currentPosition=mediaPlayer.getCurrentPosition();
+		Log.v("mars", "onPause"+currentPosition);
 	}
 
 	@Override
 	protected void onRestart() {
-		super.onRestart();
+		Log.v("mars", "onRestart"+currentPosition);
 		if(null!=mediaPlayer){
-			currentPosition=mediaPlayer.getCurrentPosition();
 			if(currentPosition!=0){
 				mediaPlayer.seekTo(currentPosition);
 				mediaPlayer.start();
 			}
 		}
+		super.onRestart();
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		Log.v("mars", "onResume"+currentPosition);
 	}
 
 	@Override
 	protected void onStart() {
 		 if(null!=mediaPlayer){
 			mediaPlayer.start();
-			Log.v("mars", "start");
+			Log.v("mars", "start"+currentPosition);
 		} 
 		super.onStart();
+		Log.v("mars", "onStart"+currentPosition);
 	}
 
 	@Override
 	protected void onStop() {
 		super.onStop();
-		if(null!=mediaPlayer){
-			mediaPlayer.stop();
-		}
-		
+		Log.v("mars", "onStop"+currentPosition);
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
 		if(null!=mediaPlayer){
+			mediaPlayer.stop();
 			mediaPlayer.release();
 		}
-		
+		Log.v("mars", "onDestroy"+currentPosition);
 	}
 	
 	public void btnonclick(View view){
