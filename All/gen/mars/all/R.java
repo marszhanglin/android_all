@@ -173,9 +173,10 @@ containing a value of this type.
         public static final int nifty_dialog_effects=0x7f03000f;
         public static final int qq_lock_screen_activity=0x7f030010;
         public static final int staggered_gridview_main=0x7f030011;
-        public static final int top1=0x7f030012;
-        public static final int top2=0x7f030013;
-        public static final int zoom_image_activity=0x7f030014;
+        public static final int startother_activity=0x7f030012;
+        public static final int top1=0x7f030013;
+        public static final int top2=0x7f030014;
+        public static final int zoom_image_activity=0x7f030015;
     }
     public static final class menu {
         public static final int main=0x7f090000;

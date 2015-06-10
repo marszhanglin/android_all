@@ -9,7 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 /**
- * 背景音乐   整个过程最好看下文档中的图例
+ * 背景音乐   <br>整个过程最好看下文档中的图例 <br>学习activity的生命周期
+ * 
  * @author EVECOM-PC
  *
  */
