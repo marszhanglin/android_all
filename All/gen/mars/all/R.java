@@ -37,12 +37,14 @@ containing a value of this type.
         public static final int rightPadding=0x7f010000;
     }
     public static final class color {
-        public static final int btn_press_color=0x7f050004;
-        public static final int btn_unpress_color=0x7f050005;
-        public static final int dialog_bg=0x7f050003;
-        public static final int divider_color=0x7f050001;
-        public static final int msg_color=0x7f050002;
-        public static final int text_color=0x7f050000;
+        public static final int btn_press_color=0x7f060004;
+        public static final int btn_unpress_color=0x7f060005;
+        public static final int dialog_bg=0x7f060003;
+        public static final int divider_color=0x7f060001;
+        public static final int holo_blue_bright=0x7f060006;
+        public static final int holo_blue_light=0x7f060007;
+        public static final int msg_color=0x7f060002;
+        public static final int text_color=0x7f060000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -51,9 +53,11 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
-        public static final int dialog_padding=0x7f060002;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
+        public static final int dialog_padding=0x7f070002;
+        public static final int widget_margin=0x7f070003;
+        public static final int widget_text_height=0x7f070004;
     }
     public static final class drawable {
         public static final int btn_press=0x7f020000;
@@ -93,66 +97,70 @@ containing a value of this type.
         public static final int title_bar=0x7f020022;
         public static final int title_btn_back=0x7f020023;
         public static final int title_btn_right=0x7f020024;
-        public static final int zoom_1=0x7f020025;
-        public static final int zoom_2=0x7f020026;
-        public static final int zoom_im=0x7f020027;
+        public static final int widget_background=0x7f020025;
+        public static final int zoom_1=0x7f020026;
+        public static final int zoom_2=0x7f020027;
+        public static final int zoom_im=0x7f020028;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0036;
-        public static final int activity_main_myhorizontal=0x7f0a0000;
-        public static final int alertTitle=0x7f0a000b;
-        public static final int button1=0x7f0a0010;
-        public static final int button2=0x7f0a0011;
-        public static final int contact_group_find=0x7f0a0003;
-        public static final int contentPanel=0x7f0a000d;
-        public static final int customPanel=0x7f0a000f;
-        public static final int demo6_time=0x7f0a0030;
-        public static final int fadein=0x7f0a0021;
-        public static final int fall=0x7f0a0027;
-        public static final int fliph=0x7f0a0029;
-        public static final int flipv=0x7f0a002a;
-        public static final int gesture_detector_content_scrollview=0x7f0a0013;
-        public static final int gesture_detector_content_tv=0x7f0a0014;
-        public static final int gesture_detector_top_tv=0x7f0a0012;
-        public static final int gvitem_imageview=0x7f0a0017;
-        public static final int gvitem_liner=0x7f0a0015;
-        public static final int gvitem_tv_content=0x7f0a0016;
-        public static final int gvitem_tv_time=0x7f0a0018;
-        public static final int hello=0x7f0a0004;
-        public static final int icon=0x7f0a000a;
-        public static final int image1=0x7f0a0019;
-        public static final int image2=0x7f0a001a;
-        public static final int image3=0x7f0a001b;
-        public static final int image4=0x7f0a001c;
-        public static final int image5=0x7f0a001d;
-        public static final int main=0x7f0a0006;
-        public static final int mainLayout=0x7f0a0031;
-        public static final int matrix_image=0x7f0a001e;
-        public static final int message=0x7f0a000e;
-        public static final int my_dialog_custom_id=0x7f0a0005;
-        public static final int my_viewpager_activity_01_01_button=0x7f0a001f;
-        public static final int my_viewpager_activity_02_01_button=0x7f0a0020;
-        public static final int my_viewpager_id=0x7f0a0001;
-        public static final int newspager=0x7f0a0026;
-        public static final int parentPanel=0x7f0a0007;
-        public static final int rotatebottom=0x7f0a002b;
-        public static final int rotateleft=0x7f0a002c;
-        public static final int shake=0x7f0a002e;
-        public static final int sidefall=0x7f0a0028;
-        public static final int site_picture_btn_back=0x7f0a0002;
-        public static final int slideBottom=0x7f0a0025;
-        public static final int slideleft=0x7f0a0023;
-        public static final int slideright=0x7f0a0022;
-        public static final int slidetop=0x7f0a0024;
-        public static final int slit=0x7f0a002d;
-        public static final int staggeredGridView1=0x7f0a0032;
-        public static final int test1_picture=0x7f0a002f;
-        public static final int titleDivider=0x7f0a000c;
-        public static final int title_template=0x7f0a0009;
-        public static final int top1_tv_1=0x7f0a0033;
-        public static final int top1_tv_2=0x7f0a0034;
-        public static final int top1_tv_3=0x7f0a0035;
-        public static final int topPanel=0x7f0a0008;
+        public static final int action_settings=0x7f0b0039;
+        public static final int activity_main_myhorizontal=0x7f0b0000;
+        public static final int alertTitle=0x7f0b000b;
+        public static final int button1=0x7f0b0010;
+        public static final int button2=0x7f0b0011;
+        public static final int contact_group_find=0x7f0b0003;
+        public static final int contentPanel=0x7f0b000d;
+        public static final int customPanel=0x7f0b000f;
+        public static final int demo6_time=0x7f0b0030;
+        public static final int fadein=0x7f0b0021;
+        public static final int fall=0x7f0b0027;
+        public static final int fliph=0x7f0b0029;
+        public static final int flipv=0x7f0b002a;
+        public static final int gesture_detector_content_scrollview=0x7f0b0013;
+        public static final int gesture_detector_content_tv=0x7f0b0014;
+        public static final int gesture_detector_top_tv=0x7f0b0012;
+        public static final int gvitem_imageview=0x7f0b0017;
+        public static final int gvitem_liner=0x7f0b0015;
+        public static final int gvitem_tv_content=0x7f0b0016;
+        public static final int gvitem_tv_time=0x7f0b0018;
+        public static final int hello=0x7f0b0004;
+        public static final int hours=0x7f0b0033;
+        public static final int icon=0x7f0b000a;
+        public static final int image1=0x7f0b0019;
+        public static final int image2=0x7f0b001a;
+        public static final int image3=0x7f0b001b;
+        public static final int image4=0x7f0b001c;
+        public static final int image5=0x7f0b001d;
+        public static final int main=0x7f0b0006;
+        public static final int mainLayout=0x7f0b0031;
+        public static final int matrix_image=0x7f0b001e;
+        public static final int message=0x7f0b000e;
+        public static final int minutes=0x7f0b0035;
+        public static final int my_dialog_custom_id=0x7f0b0005;
+        public static final int my_viewpager_activity_01_01_button=0x7f0b001f;
+        public static final int my_viewpager_activity_02_01_button=0x7f0b0020;
+        public static final int my_viewpager_id=0x7f0b0001;
+        public static final int newspager=0x7f0b0026;
+        public static final int parentPanel=0x7f0b0007;
+        public static final int rotatebottom=0x7f0b002b;
+        public static final int rotateleft=0x7f0b002c;
+        public static final int shake=0x7f0b002e;
+        public static final int sidefall=0x7f0b0028;
+        public static final int site_picture_btn_back=0x7f0b0002;
+        public static final int slideBottom=0x7f0b0025;
+        public static final int slideleft=0x7f0b0023;
+        public static final int slideright=0x7f0b0022;
+        public static final int slidetop=0x7f0b0024;
+        public static final int slit=0x7f0b002d;
+        public static final int staggeredGridView1=0x7f0b0032;
+        public static final int tens=0x7f0b0034;
+        public static final int test1_picture=0x7f0b002f;
+        public static final int titleDivider=0x7f0b000c;
+        public static final int title_template=0x7f0b0009;
+        public static final int top1_tv_1=0x7f0b0036;
+        public static final int top1_tv_2=0x7f0b0037;
+        public static final int top1_tv_3=0x7f0b0038;
+        public static final int topPanel=0x7f0b0008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -174,31 +182,40 @@ containing a value of this type.
         public static final int qq_lock_screen_activity=0x7f030010;
         public static final int staggered_gridview_main=0x7f030011;
         public static final int startother_activity=0x7f030012;
-        public static final int top1=0x7f030013;
-        public static final int top2=0x7f030014;
-        public static final int zoom_image_activity=0x7f030015;
+        public static final int textclockappwidget=0x7f030013;
+        public static final int top1=0x7f030014;
+        public static final int top2=0x7f030015;
+        public static final int zoom_image_activity=0x7f030016;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f0a0000;
     }
     public static final class raw {
-        public static final int imissyou=0x7f040000;
-        public static final int onlygirl=0x7f040001;
+        public static final int imissyou=0x7f050000;
+        public static final int onlygirl=0x7f050001;
     }
     public static final class string {
-        public static final int action_settings=0x7f070001;
-        public static final int app_name=0x7f070000;
-        public static final int hello_world=0x7f070002;
+        public static final int action_settings=0x7f080001;
+        public static final int app_name=0x7f080000;
+        public static final int hello_world=0x7f080002;
     }
     public static final class style {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
+
+
         
 
         Base application theme, dependent on API level. This theme is replaced
@@ -212,14 +229,16 @@ containing a value of this type.
 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
  Application theme. 
@@ -227,16 +246,23 @@ containing a value of this type.
  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
+        public static final int AppTheme=0x7f090001;
         /**  NiftyDialogEffectsActivity   自定义的dialog 
  NiftyDialogEffectsActivity   自定义的dialog 
  NiftyDialogEffectsActivity   自定义的dialog 
          */
-        public static final int DialogWindowTitle=0x7f080002;
-        public static final int dialog_btn=0x7f080005;
-        public static final int dialog_tran=0x7f080003;
-        public static final int dialog_untran=0x7f080004;
-        public static final int my_btn=0x7f080006;
+        public static final int DialogWindowTitle=0x7f090002;
+        public static final int dialog_btn=0x7f090005;
+        public static final int dialog_tran=0x7f090003;
+        public static final int dialog_untran=0x7f090004;
+        /**   
+         */
+        public static final int hoursTextWidget=0x7f090007;
+        public static final int minutesTextWidget=0x7f090008;
+        public static final int my_btn=0x7f090006;
+    }
+    public static final class xml {
+        public static final int appwidget_info=0x7f040000;
     }
     public static final class styleable {
         /** Attributes that can be used with a SlidingMenu.

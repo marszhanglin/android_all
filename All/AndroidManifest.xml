@@ -22,38 +22,59 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.NiftyDialogEffectsActivity"/> 
-        
-        <activity android:name=".activity.StaggeredGridViewActivity"/> 
-        <activity android:name=".activity.at_staggeredgrid.ZoomImageActivity"/> 
-        <activity android:name=".activity.at_staggeredgrid.AnimationsActivity"/>
-        <activity android:name=".activity.at_staggeredgrid.GestureDetectorActivity"/>
-        <activity android:name=".activity.at_staggeredgrid.MatrixActivity"/>
-        <activity android:name=".activity.at_staggeredgrid.viewpager.MyviewPagerActivity"></activity>
-        <activity android:name=".activity.at_staggeredgrid.viewpager.MyviewPagerActivity01"></activity>
-        <activity android:name=".activity.at_staggeredgrid.viewpager.DifferentViewPagerActivity"></activity>
-		<activity android:name="mars.all.activity.mediaplay.MediaActivity"></activity>        
-        <activity android:name="mars.all.activity.activitysource.StartOtherActivity"></activity> 
-		
-        <!-- 2仿qq锁屏弹窗   excludeFromRecents控制不住Recents列表中显示-->
-        <activity android:name=".activity.at_staggeredgrid.lockscrren.QQLockScreenActivity"
-            android:launchMode="singleInstance"
+        <activity android:name=".activity.NiftyDialogEffectsActivity" />
+        <activity android:name=".activity.StaggeredGridViewActivity" />
+        <activity android:name=".activity.at_staggeredgrid.ZoomImageActivity" />
+        <activity android:name=".activity.at_staggeredgrid.AnimationsActivity" />
+        <activity android:name=".activity.at_staggeredgrid.GestureDetectorActivity" />
+        <activity android:name=".activity.at_staggeredgrid.MatrixActivity" />
+        <activity android:name=".activity.at_staggeredgrid.viewpager.MyviewPagerActivity" >
+        </activity>
+        <activity android:name=".activity.at_staggeredgrid.viewpager.MyviewPagerActivity01" >
+        </activity>
+        <activity android:name=".activity.at_staggeredgrid.viewpager.DifferentViewPagerActivity" >
+        </activity>
+        <activity android:name="mars.all.activity.mediaplay.MediaActivity" >
+        </activity>
+        <activity android:name="mars.all.activity.activitysource.StartOtherActivity" >
+        </activity>
+
+        <!-- 2仿qq锁屏弹窗   excludeFromRecents控制不住Recents列表中显示 -->
+        <activity
+            android:name=".activity.at_staggeredgrid.lockscrren.QQLockScreenActivity"
             android:excludeFromRecents="true"
-            android:taskAffinity=""></activity>
-        
-        
-        
+            android:launchMode="singleInstance" >
+        </activity>
+
         <!-- 锁屏  解锁广播接收器 -->
-        <receiver android:name=".receive.LockScreenReceive">
+        <!--
+        <receiver android:name="mars.all.receive.LockScreenReceive">
 			<intent-filter >
 			    <action android:name="android.intent.action.SCREEN_ON"/>
-			    <!-- <action android:name="android.intent.action.SCREEN_OFF"/> -->
+			    <action android:name="android.intent.action.SCREEN_OFF"/>
 			</intent-filter>            
         </receiver>
+        -->
+
+
+        <!-- 文本时钟 -->
+        <receiver
+            android:name=".activity.textclock.appwidgetprovider.TextClockAppWidget"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/appwidget_info" />
+        </receiver>
     </application>
-	
+
     <!-- 解锁的权限 可以直接停用解锁  如拨打电话后再锁屏 -->
+    <!--
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
-    <!-- 电源锁的权限 -->
+    电源锁的权限
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    -->
+
 </manifest>

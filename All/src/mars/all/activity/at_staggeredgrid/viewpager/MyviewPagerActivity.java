@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 /**
- * 这个Viewpager里面只有图片
+ * 这个Viewpager里面只有图片    3.0后才可以用
  * 2015-2-16下午4:25:16 类MyviewPagerActivity
  * @author Mars zhang
  *

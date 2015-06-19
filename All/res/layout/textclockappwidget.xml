@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/widget_margin" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/widget_background"
+        android:orientation="vertical"
+        android:paddingBottom="0dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0dp" >
+
+        <TextView
+            android:id="@+id/hours"
+            style="@style/hoursTextWidget"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom" />
+
+        <TextView
+            android:id="@+id/tens"
+            style="@style/minutesTextWidget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:layout_marginTop="-8dp" />
+
+        <TextView
+            android:id="@+id/minutes"
+            style="@style/minutesTextWidget"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</FrameLayout>
+
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/date_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="桌面空间__要展现什么呢？纠结—_—//" />
+
+</LinearLayout>-->
