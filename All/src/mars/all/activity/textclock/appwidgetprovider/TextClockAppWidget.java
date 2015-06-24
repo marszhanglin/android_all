@@ -32,6 +32,12 @@ public class TextClockAppWidget extends AppWidgetProvider {
         this.context = context;
         toast(context, "all--onUpdate  length="+appWidgetIds.length);
     }
+    
+    
+    private void paddingintent(){}
+    
+    
+    
     /**
 	 * 每接收一次广播消息就调用一次，使用频繁
 	 */
