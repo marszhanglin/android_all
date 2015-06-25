@@ -68,6 +68,14 @@
                     android:name="android.appwidget.provider"
                     android:resource="@xml/appwidget_info" />
         </receiver>
+        
+        <!-- 文本闹钟更新服务 -->
+        <service android:name="mars.all.activity.textclock.appwidgetprovider.TextClockServer">
+            <intent-filter >
+                <action android:name="com.stylingandroid.textclock.ACTION_UPDATE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
     </application>
 
     <!-- 解锁的权限 可以直接停用解锁  如拨打电话后再锁屏 -->

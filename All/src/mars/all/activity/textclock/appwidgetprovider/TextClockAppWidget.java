@@ -24,13 +24,15 @@ import android.widget.Toast;
  */
 public class TextClockAppWidget extends AppWidgetProvider {
     private Context context = null;
+    private Intent updateIntent=new Intent(TextClockServer.ACTION_UPDATE);
  
     @Override
     public void onUpdate(Context context,
                          AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
+    	toast(context, "all--onUpdate  length="+appWidgetIds.length);
         this.context = context;
-        toast(context, "all--onUpdate  length="+appWidgetIds.length);
+        this.context.startService(updateIntent);
     }
     
     
