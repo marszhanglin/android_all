@@ -1,10 +1,15 @@
 package mars.all.activity.textclock.appwidgetprovider;
 
+import java.util.Calendar;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 /**
  * 1、桌面控件AppWidgetProvider 继承自 BroadcastReceiver(广播接收者) 所以我们要配置Manifest 
@@ -25,18 +30,49 @@ import android.widget.Toast;
 public class TextClockAppWidget extends AppWidgetProvider {
     private Context context = null;
     private Intent updateIntent=new Intent(TextClockServer.ACTION_UPDATE);
- 
+    private PendingIntent pendingIntent=null;
     @Override
     public void onUpdate(Context context,
                          AppWidgetManager appWidgetManager,
                          int[] appWidgetIds) {
     	toast(context, "all--onUpdate  length="+appWidgetIds.length);
         this.context = context;
-        this.context.startService(updateIntent);
+//        this.context.startService(updateIntent);
+        //在这里启动定时器 每隔一分钟就paddingIntent一次执行一次Server
+        pendingIntentTimer();
     }
     
     
-    private void paddingintent(){}
+    private void pendingIntentTimer(){
+    	//获取闹钟服务
+    	AlarmManager alarmManager=(AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+    	pendingIntent=PendingIntent.getService(context,
+    			1, 
+    			updateIntent, 
+    			PendingIntent.FLAG_NO_CREATE); // 会检查是否有一个带有同样参数的PendingIntent已经存在于此设备上。如果存在返回它的实例，否则返回null	
+    	if(null==pendingIntent){
+    		pendingIntent=PendingIntent.getService(context,
+        			1, 
+        			updateIntent, 
+        			PendingIntent.FLAG_CANCEL_CURRENT);
+    		/*alarmManager.setRepeating(//重复闹钟
+        			AlarmManager.RTC_WAKEUP, //闹钟唤醒类型5种    RTC:不唤醒设备 RTC_WAKEUP:能唤醒设备  4:关机都唤醒(不管用)
+        			System.currentTimeMillis(), //何时开始    业务：这样不能确保是整分钟时更新 有可能到了35秒才更新
+        			60*1000, //每隔多久
+        			pendingIntent);//广播
+    		Log.v("mars", "alarmManager成功创建");*/
+    		Calendar calendar=Calendar.getInstance();
+    		calendar.set(Calendar.SECOND, 0);
+    		calendar.set(Calendar.MILLISECOND, 0);
+    		calendar.add(Calendar.MINUTE, 1);
+    		alarmManager.setRepeating(//重复闹钟    致命问题：由于4.4之后的重复闹钟不准确所以不是一分钟就执行一次server
+        			4, //闹钟唤醒类型5种
+        			calendar.getTimeInMillis(), //何时开始    业务：这样不能确保是整分钟时更新 有可能到了35秒才更新
+        			20*1000, //每隔多久
+        			pendingIntent);//广播
+    		Log.v("mars", "alarmManager成功创建");
+    	} 
+    }
     
     
     
@@ -63,13 +99,12 @@ public class TextClockAppWidget extends AppWidgetProvider {
 	}
 	
 	/**
-	 * 当桌面控件从桌面删除时调用 没删除一个就调用一次
+	 * 当桌面控件从桌面删除时调用 没删除一个就调用一次   
+	 * 当没有widgetids时取消定时器
 	 */
 	@Override
 	public void onDeleted(Context context, int[] appWidgetIds) {
-		toast(context,"all--onDeleted length="+appWidgetIds.length);
-		super.onDeleted(context, appWidgetIds);
-		
+		toast(context,"all--onDeleted "+appWidgetIds.length);
 	}
 
 	/**
@@ -87,7 +122,15 @@ public class TextClockAppWidget extends AppWidgetProvider {
 	@Override
 	public void onDisabled(Context context) {
 		toast(context,"all--onDisabled ");
-		super.onDisabled(context);
+		AlarmManager alarmManager=(AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+		pendingIntent=PendingIntent.getService(context,
+    			1, 
+    			updateIntent, 
+    			PendingIntent.FLAG_NO_CREATE); 
+		if(null!=pendingIntent){
+			alarmManager.cancel(pendingIntent);//取消该闹钟
+			pendingIntent.cancel();
+		} 
 	}
     
     

@@ -2,7 +2,7 @@ package mars.all.activity.textclock.appwidgetprovider;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.widget.Toast;
+import android.util.Log;
 
 /**
  * 这里的服务用于更新怎么文本闹钟的时间  
@@ -17,15 +17,19 @@ public class TextClockServer extends IntentService {
 	public static final String ACTION_UPDATE = "mars.all.activity.textclock.appwidgetprovider.TextClockServer";
 	public TextClockServer() {
 		super(TAG);
-		Toast.makeText(getApplicationContext(), "", 1).show();
+		Log.v("mars", "TextClockServer---TextClockServer()");
 	}
 
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		if(intent.getAction().equals(ACTION_UPDATE)){
-			Toast.makeText(getApplicationContext(), "onHandleIntent", 1).show();
+			//震动
+			/*Vibrator mVibrator01
+             =(Vibrator)getApplication().getSystemService(Service.VIBRATOR_SERVICE);
+             long[] longs= new
+             long[]{100l,2000l,1000l,100l,100l,100l,100l,100l,100l,100l,100l,100l}; //停开停开停开停开停开。。。
+             mVibrator01.vibrate(longs, -1); //节奏   次数
+			Log.v("mars", "TextClockServer---onHandleIntent()");*/
 		}
-	}
-
-	
+	} 
 }

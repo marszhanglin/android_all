@@ -84,5 +84,6 @@
     电源锁的权限
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     -->
-
+	<!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 </manifest>
