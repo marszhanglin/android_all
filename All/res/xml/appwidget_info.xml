@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialLayout="@layout/textclockappwidget"
-    android:minHeight="40dp"
-    android:minWidth="110dp"
+    android:minHeight="200dp"
+    android:minWidth="220dp"
     android:previewImage="@drawable/pager_image1"
     android:resizeMode="none"
     android:updatePeriodMillis="86400000" >
@@ -10,7 +10,7 @@
 </appwidget-provider><!--
 这个文件在程序运行时会转解析为 AppWidgetProviderInfo 实例，让我们一起来看看它包含的属性：
 
-minWidth 和 maxWidth：用来设置界面的大小，并且都默认值。在这个应用中，我们将创建一个大小为2×1（格子）
+minWidth 和 maxWidth：用来设置界面的大小，并且都默认值。在这个应用中，我们将创建一个大小为2×1（格子）110x40
 的小控件（widget）。关于这些参数的详细解释请参见api。
 
 updatePeriodMillis：系统调用 AppWidgetProvider 更新应用的频率，参数设置的值取决于应用的实际需要。
@@ -23,5 +23,21 @@ previewImage：在使用API 11（Honeycomb 3.0）的设备及更新版本中，�
 我们会添加截屏功能，但是此功能不支持API 12之前版本的设备。  android:previewImage="@drawable/widget"
 
 resizeMode：从API 12（Honeycomb 3.1）开始就支持重置小控件的大小。这里我们使用的是固定大小。
-再一次说明，API 12之前的设备不支持该属性。
+再一次说明，API 12之前的设备不支持该属性。 
 -->
+ <!--   
+        计算size的公式: (70*n) -30  n为部件所需的大小(占几格)   当前的就是  4x4  
+        minResizeWidth  
+        minResizeHeight   能被调整的最小宽高，若大于minWidth minHeight 则忽略  
+        label   选择部件时看到标签  
+        icon    选择部件时看到图标  
+        updatePeriodMillis  更新时间间隔  
+        previewImage    选择部件时 展示的图像  3.0以上使用  
+        initialLayout   布局文件  
+        resizeMode      调整size模式  
+        configure       如果需要在启动前先启动一个Activity进行设置，在这里给出Activity的完整类名  
+        autoAdvanceViewId=@id/xx    与集合部件一起使用，指定该集合item自动推进 暂只发现对stackview有效，会自动一段时间推进到下一个  
+          
+        集合部件：3.0后才有。set view：ListView、GridView、StackView、AdapterViewFlipper  
+        ViewFlipper 为非集合部件  
+     --> 
