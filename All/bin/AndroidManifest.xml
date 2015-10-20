@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.NiftyDialogEffectsActivity" />
-        <activity android:name=".activity.StaggeredGridViewActivity" />
+        <activity android:name=".activity.StaggeredGridViewChildOne" />
+        <activity android:name=".activity.StaggeredGridViewChildTwo" />
         <activity android:name=".activity.at_staggeredgrid.ZoomImageActivity" />
         <activity android:name=".activity.at_staggeredgrid.AnimationsActivity" />
         <activity android:name=".activity.at_staggeredgrid.GestureDetectorActivity" />
@@ -38,7 +39,11 @@
         </activity>
         <activity android:name="mars.all.activity.activitysource.StartOtherActivity" >
         </activity>
-
+		<activity android:name="mars.all.activity.HoveringScroll.HoveringScrollSampleActivity" >
+        </activity>
+        <activity android:name="mars.all.activity.two.flinggallery.FlingGalleryActivity" >
+        </activity>
+         
         <!-- 2仿qq锁屏弹窗   excludeFromRecents控制不住Recents列表中显示 -->
         <activity
             android:name=".activity.at_staggeredgrid.lockscrren.QQLockScreenActivity"

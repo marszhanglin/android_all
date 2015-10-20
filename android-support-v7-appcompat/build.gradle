@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies { 
+        classpath 'com.android.tools.build:gradle:0.11.+'
+        classpath 'com.github.dcendents:android-maven-plugin:1.0'
+    }
+}
+
+apply plugin: 'android-library'
+apply plugin: 'android-maven'
+
+group = 'com.android.support'
+version = '19.1.2'
+
+archivesBaseName = 'appcompat-v7'
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:19.1.+'
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.1.0"
+
+    sourceSets {
+        main.manifest.srcFile 'AndroidManifest.xml'
+        main.java.srcDir 'src'
+        main.res.srcDir 'res'
+        main.assets.srcDir 'assets'
+        main.resources.srcDir 'src'
+
+        // this moves src/instrumentTest to tests so all folders follow:
+        // tests/java, tests/res, tests/assets, ...
+        // This is a *reset* so it replaces the default paths
+        androidTest.setRoot('tests')
+        androidTest.java.srcDir 'tests/src'
+    }
+
+    lintOptions {
+        // TODO: fix errors and reenable.
+        abortOnError false
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: 'http://mvn.getkeepsafe.com/artifactory/ext-release-local') {
+                authentication(userName: keepsafeUser, password: keepsafePassword)
+            }
+            snapshotRepository(url: 'http://mvn.getkeepsafe.com/artifactory/libs-snapshot-local') {
+                authentication(userName: keepsafeUser, password: keepsafePassword);
+            }
+            pom.project {
+                artifactId 'appcompat-v7'
+                packaging 'jar'
+            }
+        }
+    }
+}

@@ -23,7 +23,6 @@ public class NiftyDialogEffectsActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.nifty_dialog_effects);
 		
-		
 	}
 	
 	

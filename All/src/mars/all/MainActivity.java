@@ -5,9 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import mars.all.activity.NiftyDialogEffectsActivity;
-import mars.all.activity.StaggeredGridViewActivity;
-import mars.all.activity.activitysource.StartOtherActivity;
-import mars.all.activity.mediaplay.MediaActivity;
+import mars.all.activity.StaggeredGridViewChildOne;
+import mars.all.activity.StaggeredGridViewChildTwo;
 import mars.all.adapter.PictureAdapter;
 import mars.all.bean.ItemDataAtMain;
 import mars.all.view.StaggeredGridView.StaggeredGridView;
@@ -47,16 +46,16 @@ public class MainActivity extends Activity {
 	
 		staggeredGridView=(StaggeredGridView) findViewById(R.id.staggeredGridView1); 
 		List<ItemDataAtMain> items=new ArrayList<ItemDataAtMain>();
-		ItemDataAtMain item1=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据1  ", new Date());
-		ItemDataAtMain item2=new ItemDataAtMain("背景音乐及activity的生命周期使用", new Date());
-		ItemDataAtMain item3=new ItemDataAtMain("activity的启动机制", new Date());
+		ItemDataAtMain item1=new ItemDataAtMain("比较乱还未整理:\n瀑布流布局\nYOYO动画\n手势\n矩阵\nViewpager\n滑动浮动控件\n背景音乐", new Date());
+		ItemDataAtMain item2=new ItemDataAtMain("自定义View集合:", new Date());
+		ItemDataAtMain item3=new ItemDataAtMain("没用", new Date());
 		ItemDataAtMain item4=new ItemDataAtMain("各种Server", new Date());
 		ItemDataAtMain item5=new ItemDataAtMain("没用", new Date());
 		ItemDataAtMain item6=new ItemDataAtMain("没用", new Date());
 		ItemDataAtMain item7=new ItemDataAtMain("没用", new Date());
 		ItemDataAtMain item8=new ItemDataAtMain("没用", new Date());
-		ItemDataAtMain item9=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据9  ", new Date());
-		ItemDataAtMain item10=new ItemDataAtMain("瀑布流布局内部的数据item gridview的item数据10  ", new Date());
+		ItemDataAtMain item9=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item10=new ItemDataAtMain("没用", new Date());
 		items.add(item1);
 		items.add(item2);
 		items.add(item3);
@@ -80,22 +79,23 @@ public class MainActivity extends Activity {
 				Intent intent=null;
 				switch (position) {
 				case 0:
-					intent=new Intent(getApplicationContext(), StaggeredGridViewActivity.class);
+					intent=new Intent(getApplicationContext(), StaggeredGridViewChildOne.class);
 					startActivity(intent);
+					overridePendingTransition(R.anim.activity_in_heart , R.anim.activity_out_heart);
 					break;
 				case 1:
-					intent=new Intent(getApplicationContext(), MediaActivity.class);
+					intent=new Intent(getApplicationContext(), StaggeredGridViewChildTwo.class);
 					startActivity(intent);
 					break;
 				case 2:
-					intent=new Intent(getApplicationContext(), StartOtherActivity.class);
-					startActivity(intent);
+					break;
+				case 4: 
+					break;
+				case 5:
 					break;
 				default:
 					break;
-				}
-				
-				
+				} 
 			}
 		});
         /**将点击时的背景颜色有黄色改成透明*/
@@ -111,7 +111,7 @@ public class MainActivity extends Activity {
 	/**切换监听事件*/
 	public void toggle(View view){
 		myHorizontalScrollView.toggle();
-	} 
+	}
 	/**左边第一个item点击*/
 	public void NiftyDialogEffects(View view){
 		Intent intent=new Intent(getApplicationContext(), NiftyDialogEffectsActivity.class);
