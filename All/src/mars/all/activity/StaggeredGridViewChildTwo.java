@@ -6,6 +6,7 @@ import java.util.List;
 
 import mars.all.R;
 import mars.all.activity.two.flinggallery.FlingGalleryActivity;
+import mars.all.activity.two.xiaomi.XiaomiClockActivity;
 import mars.all.adapter.PictureAdapter;
 import mars.all.bean.ItemDataAtMain;
 import mars.all.view.StaggeredGridView.StaggeredGridView;
@@ -34,7 +35,7 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
 		List<ItemDataAtMain> items=new ArrayList<ItemDataAtMain>();
 		ItemDataAtMain item1=new ItemDataAtMain("Android徽章控件", new Date());
 		ItemDataAtMain item2=new ItemDataAtMain("uc和墨迹天气那样的左右拖动效果", new Date());
-		ItemDataAtMain item3=new ItemDataAtMain("111111111111111111", new Date());
+		ItemDataAtMain item3=new ItemDataAtMain("小米时钟View", new Date());
 		ItemDataAtMain item4=new ItemDataAtMain("111111111111111111", new Date());
 		ItemDataAtMain item5=new ItemDataAtMain("111111111111111111", new Date());
 		ItemDataAtMain item6=new ItemDataAtMain("111111111111111111", new Date());
@@ -70,6 +71,14 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
 					break;
 				case 1:
 					intent=new Intent(getApplicationContext(), FlingGalleryActivity.class);
+					startActivity(intent); 
+					//设置activity切换动画
+					overridePendingTransition(R.anim.activity_in_heart , R.anim.activity_out_heart);
+					//1.它必需紧挨着startActivity()或者finish()函数之后调用"
+//					overridePendingTransition(R.anim.activity_in_from_right, R.anim.activity_out_to_left);
+					break;
+				case 2:
+					intent=new Intent(getApplicationContext(), XiaomiClockActivity.class);
 					startActivity(intent); 
 					//设置activity切换动画
 					overridePendingTransition(R.anim.activity_in_heart , R.anim.activity_out_heart);
