@@ -44,3 +44,5 @@ Temporary Items
 *.class
 *.class
 *.class
+*.dex
+All/bin/All.apk
