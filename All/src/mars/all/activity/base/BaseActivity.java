@@ -105,7 +105,7 @@ public class BaseActivity extends Activity {
             // 取得返回的数据
             strResult = EntityUtils.toString(httpResponse.getEntity());
         }
-
+        
         return strResult;
     }
     
