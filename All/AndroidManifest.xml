@@ -52,6 +52,13 @@
             android:excludeFromRecents="true"
             android:launchMode="singleInstance" >
         </activity>
+        
+        
+        <!-- eventBus --> 
+        <activity android:name="mars.all.activity.two.eventBus.EventFirstActivity" >
+        </activity>
+        <activity android:name="mars.all.activity.two.eventBus.EventSecondActivity" >
+        </activity>
 
         <!-- 锁屏  解锁广播接收器 -->
         <!--
