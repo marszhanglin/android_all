@@ -7,6 +7,7 @@ import java.util.List;
 import mars.all.R;
 import mars.all.activity.two.eventBus.EventFirstActivity;
 import mars.all.activity.two.flinggallery.FlingGalleryActivity;
+import mars.all.activity.two.viewgroup.FourSignViewGroupActivity;
 import mars.all.activity.two.xiaomi.XiaomiClockActivity;
 import mars.all.adapter.PictureAdapter;
 import mars.all.bean.ItemDataAtMain;
@@ -38,7 +39,7 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
 		ItemDataAtMain item2=new ItemDataAtMain("uc和墨迹天气那样的左右拖动效果", new Date());
 		ItemDataAtMain item3=new ItemDataAtMain("小米时钟View", new Date());
 		ItemDataAtMain item4=new ItemDataAtMain("EventBus使用组件间通信", new Date());
-		ItemDataAtMain item5=new ItemDataAtMain("111111111111111111", new Date());
+		ItemDataAtMain item5=new ItemDataAtMain("ViewGroup详解", new Date());
 		ItemDataAtMain item6=new ItemDataAtMain("111111111111111111", new Date());
 		ItemDataAtMain item7=new ItemDataAtMain("111111111111111111", new Date());
 		ItemDataAtMain item8=new ItemDataAtMain("111111111111111111", new Date());
@@ -92,6 +93,10 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
 	                    //设置activity切换动画
 	                    overridePendingTransition(R.anim.activity_in_heart , R.anim.activity_out_heart);
 	                    break;
+	               case 4:
+                       intent=new Intent(getApplicationContext(), FourSignViewGroupActivity.class);
+                       startActivity(intent); 
+                       break;
 				default:
 					break;
 				} 
