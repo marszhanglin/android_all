@@ -63,7 +63,9 @@
         <!-- ViewGroup教程  -->
 		<activity android:name="mars.all.activity.two.viewgroup.FourSignViewGroupActivity" >
         </activity>
-        
+        <activity android:name="mars.all.activity.two.tree.TreeActivity" >
+        </activity>
+		
         <!-- 锁屏  解锁广播接收器 -->
         <!--
         <receiver android:name="mars.all.receive.LockScreenReceive">
