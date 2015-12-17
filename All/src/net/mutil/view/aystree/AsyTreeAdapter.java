@@ -1,6 +1,7 @@
-package mars.all.activity.two.tree;
+package net.mutil.view.aystree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import mars.all.R;
 import net.mutil.util.MyLayoutUtil;
@@ -20,37 +21,46 @@ import android.widget.TextView;
  * @author Mars zhang
  * @created 2015-12-15 上午10:59:51
  */
-public class TreeAdapter extends BaseAdapter {
+public class AsyTreeAdapter extends BaseAdapter {
     /** 所有的数据集合 */
-    private ArrayList<TreeData> allNodes;
+    private ArrayList<AsyTreeData> allNodes;
     /** 顶层元素结合 */
-    private ArrayList<TreeData> topNodes;
+    private ArrayList<AsyTreeData> topNodes;
     /** LayoutInflater */
     private LayoutInflater inflater;
     /** item的行首缩进基数 */
     private int indentionBase;
-
-    public TreeAdapter(ArrayList<TreeData> topNodes, ArrayList<TreeData> allNodes, Context context) {
+    /** context */
+    protected Context mcontext;
+    
+    protected String postUrl = "";
+    protected HashMap<String, String> postentityMap;
+    
+    public AsyTreeAdapter(ArrayList<AsyTreeData> topNodes, ArrayList<AsyTreeData> allNodes, Context context,
+            String postUrl,HashMap<String, String> postentityMap) {
         super();
         indentionBase = 70;
         this.inflater = LayoutInflater.from(context);
         this.allNodes = allNodes;
         this.topNodes = topNodes;
+        this.mcontext= context;
+        this.postUrl =postUrl;
+        this.postentityMap =postentityMap;
     }
 
-    public ArrayList<TreeData> getAllNodes() {
+    public ArrayList<AsyTreeData> getAllNodes() {
         return allNodes;
     }
 
-    public ArrayList<TreeData> getTopNodes() {
+    public ArrayList<AsyTreeData> getTopNodes() {
         return topNodes;
     }
     
-    public void setAllNodes(ArrayList<TreeData> allNodes) {
+    public void setAllNodes(ArrayList<AsyTreeData> allNodes) {
         this.allNodes = allNodes;
     }
 
-    public void setTopNodes(ArrayList<TreeData> topNodes) {
+    public void setTopNodes(ArrayList<AsyTreeData> topNodes) {
         this.topNodes = topNodes;
     }
 
@@ -82,7 +92,7 @@ public class TreeAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag(); // 这样都能获取到ViewHolder对象
         }
 
-        TreeData itemdata = topNodes.get(position);
+        AsyTreeData itemdata = topNodes.get(position);
         // 缩进
         MyLayoutUtil.setMargin(holder.imageView, itemdata.getLevel() * indentionBase, holder.imageView.getPaddingTop(),
                 holder.imageView.getPaddingRight(), holder.imageView.getPaddingBottom());
