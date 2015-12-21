@@ -3,7 +3,6 @@ package net.mutil.view.aystree;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import mars.all.R;
 import net.mutil.util.MyLayoutUtil;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -32,20 +31,35 @@ public class AsyTreeAdapter extends BaseAdapter {
     private int indentionBase;
     /** context */
     protected Context mcontext;
-    
+
     protected String postUrl = "";
     protected HashMap<String, String> postentityMap;
-    
+    private int itemLayoutRes;
+    private int itemImageId;
+    private int itemTextId;
+    private int drawableid;
+
+    public void setLayoutResIds(int itemLayoutRes, int itemImageId, int itemTextId, int drawableid) {
+        this.itemLayoutRes = itemLayoutRes;
+        this.itemImageId = itemImageId;
+        this.itemTextId = itemTextId;
+        this.drawableid = drawableid;
+    }
+
+    private void setIndentionBase(int indentionBase) {
+        this.indentionBase = indentionBase;
+    }
+
     public AsyTreeAdapter(ArrayList<AsyTreeData> topNodes, ArrayList<AsyTreeData> allNodes, Context context,
-            String postUrl,HashMap<String, String> postentityMap) {
+            String postUrl, HashMap<String, String> postentityMap) {
         super();
         indentionBase = 70;
         this.inflater = LayoutInflater.from(context);
         this.allNodes = allNodes;
         this.topNodes = topNodes;
-        this.mcontext= context;
-        this.postUrl =postUrl;
-        this.postentityMap =postentityMap;
+        this.mcontext = context;
+        this.postUrl = postUrl;
+        this.postentityMap = postentityMap;
     }
 
     public ArrayList<AsyTreeData> getAllNodes() {
@@ -55,7 +69,7 @@ public class AsyTreeAdapter extends BaseAdapter {
     public ArrayList<AsyTreeData> getTopNodes() {
         return topNodes;
     }
-    
+
     public void setAllNodes(ArrayList<AsyTreeData> allNodes) {
         this.allNodes = allNodes;
     }
@@ -84,9 +98,14 @@ public class AsyTreeAdapter extends BaseAdapter {
         ViewHolder holder = null;
         if (null == convertView) {
             holder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.tree_data_item, null);
-            holder.imageView = (ImageView) convertView.findViewById(R.id.tree_data_item_image);
-            holder.textView = (TextView) convertView.findViewById(R.id.tree_data_item_text);
+            // convertView = inflater.inflate(R.layout.tree_data_item, null);
+            // holder.imageView = (ImageView)
+            // convertView.findViewById(R.id.tree_data_item_image);
+            // holder.textView = (TextView)
+            // convertView.findViewById(R.id.tree_data_item_text);
+            convertView = inflater.inflate(itemLayoutRes, null);
+            holder.imageView = (ImageView) convertView.findViewById(itemImageId);
+            holder.textView = (TextView) convertView.findViewById(itemTextId);
             convertView.setTag(holder);// setTag存储View的而外信息
         } else {
             holder = (ViewHolder) convertView.getTag(); // 这样都能获取到ViewHolder对象
@@ -97,18 +116,18 @@ public class AsyTreeAdapter extends BaseAdapter {
         MyLayoutUtil.setMargin(holder.imageView, itemdata.getLevel() * indentionBase, holder.imageView.getPaddingTop(),
                 holder.imageView.getPaddingRight(), holder.imageView.getPaddingBottom());
         if (itemdata.isHasChildren() && itemdata.isExpanded()) {
-            holder.imageView.setBackgroundResource(R.drawable.ic_launcher);
+            holder.imageView.setBackgroundResource(drawableid);
             holder.textView.setText(itemdata.getContentText());
             holder.imageView.setVisibility(View.VISIBLE);
             holder.textView.setVisibility(View.VISIBLE);
         } else if (itemdata.isHasChildren() && !itemdata.isExpanded()) {
-            holder.imageView.setBackgroundResource(R.drawable.ic_launcher);
+            holder.imageView.setBackgroundResource(drawableid);
             holder.textView.setText(itemdata.getContentText());
             holder.textView.setText(itemdata.getContentText());
             holder.imageView.setVisibility(View.VISIBLE);
             holder.textView.setVisibility(View.VISIBLE);
         } else if (!itemdata.isHasChildren()) {
-            holder.imageView.setBackgroundResource(R.drawable.ic_launcher);
+            holder.imageView.setBackgroundResource(drawableid);
             holder.textView.setText(itemdata.getContentText());
             holder.imageView.setVisibility(View.VISIBLE);
             holder.textView.setVisibility(View.VISIBLE);

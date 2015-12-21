@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import mars.all.R;
+import mars.all.activity.two.addview.AddViewActivity;
 import mars.all.activity.two.asytree.AsyTreeActivity;
 import mars.all.activity.two.eventBus.EventFirstActivity;
 import mars.all.activity.two.flinggallery.FlingGalleryActivity;
@@ -44,7 +45,7 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
         ItemDataAtMain item6 = new ItemDataAtMain("建行圆形导航", new Date());
         ItemDataAtMain item7 = new ItemDataAtMain("树型", new Date());
         ItemDataAtMain item8 = new ItemDataAtMain("异步树", new Date());
-        ItemDataAtMain item9 = new ItemDataAtMain("111111111111111111", new Date());
+        ItemDataAtMain item9 = new ItemDataAtMain("动态添加数据", new Date());
         ItemDataAtMain item10 = new ItemDataAtMain("11111111111111111", new Date());
         items.add(item1);
         items.add(item2);
@@ -110,6 +111,10 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
                         break;
                     case 7:
                         intent = new Intent(getApplicationContext(), AsyTreeActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 8:
+                        intent = new Intent(getApplicationContext(), AddViewActivity.class);
                         startActivity(intent);
                         break;
                     default:

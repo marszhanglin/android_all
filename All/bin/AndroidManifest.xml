@@ -67,7 +67,8 @@
         </activity>
 		<activity android:name="mars.all.activity.two.asytree.AsyTreeActivity" >
         </activity>
-        
+        <activity android:name="mars.all.activity.two.addview.AddViewActivity" >
+        </activity>
         
         <!-- 锁屏  解锁广播接收器 -->
         <!--
