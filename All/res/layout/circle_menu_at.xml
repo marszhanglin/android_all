@@ -9,6 +9,7 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
 	    android:background="@drawable/circle_bg3" 
+	    android:id="@+id/circle_menu_at_cl"
 	    >
 	    
 	    
