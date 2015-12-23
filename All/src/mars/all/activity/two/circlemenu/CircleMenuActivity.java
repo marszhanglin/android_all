@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 /**
  * 
- * 描述  建行圆形导航
+ * 描述  建行圆形导航   华硕提交
  * @author Mars zhang
  * @created 2015-12-11 下午2:18:30
  */
