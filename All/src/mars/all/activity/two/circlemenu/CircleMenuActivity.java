@@ -1,13 +1,10 @@
 package mars.all.activity.two.circlemenu;
 
-import mars.all.MainActivity;
 import mars.all.R;
 import mars.all.activity.two.circlemenu.CircleMenuLayout.CircleMenuInterface;
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
-import android.widget.Toast;
 
 /**
  * 
