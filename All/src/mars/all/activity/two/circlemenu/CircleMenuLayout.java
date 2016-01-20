@@ -4,6 +4,7 @@ import mars.all.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -99,7 +100,7 @@ public class CircleMenuLayout extends ViewGroup {
 			// 计算 中心点到menu item中心的距离
 			float temp = mRadius / 2 - childwidth / 2 - mpadding;
 
-			mStartAngle %= 360;//
+			mStartAngle %= 360;//在线程中改变这个值再requestLayout下就执行onLayout
 			left = (int) (mRadius / 2 + Math.round(temp * 0.9
 					* Math.cos(Math.toRadians(mStartAngle)) - childwidth / 2));
 			top = (int) (mRadius / 2 + Math.round(temp * 0.9
@@ -197,6 +198,14 @@ public class CircleMenuLayout extends ViewGroup {
 		}
 
 	}
+	
+	/**
+     * 主要为了action_down时，返回true    View与ViewGroup事件分发机制要理清楚
+     */
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+	    return  true;
+	}
 
 	/**
 	 * 
@@ -256,4 +265,41 @@ public class CircleMenuLayout extends ViewGroup {
 		}
 
 	}
+	
+	
+	   /**
+     * 根据触摸的位置，计算角度
+     * 
+     * @param xTouch
+     * @param yTouch
+     * @return
+     */
+    private float getAngle(float xTouch, float yTouch)
+    {
+        double x = xTouch - (mRadius / 2d);
+        double y = yTouch - (mRadius / 2d);
+        return (float) (Math.asin(y / Math.hypot(x, y)) * 180 / Math.PI);
+    }
+    
+    
+    /**
+     * 根据当前位置计算象限
+     * 
+     * @param x
+     * @param y
+     * @return
+     */
+    private int getQuadrant(float x, float y)
+    {
+        int tmpX = (int) (x - mRadius / 2);
+        int tmpY = (int) (y - mRadius / 2);
+        if (tmpX >= 0)
+        {
+            return tmpY >= 0 ? 4 : 1;
+        } else
+        {
+            return tmpY >= 0 ? 3 : 2;
+        }
+
+    }
 }

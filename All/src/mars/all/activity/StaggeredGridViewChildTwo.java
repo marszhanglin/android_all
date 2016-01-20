@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import mars.all.MainActivity;
 import mars.all.R;
 import mars.all.activity.two.addview.AddViewActivity;
+import mars.all.activity.two.androidannotations.AndroidAnnotationsTest_;
 import mars.all.activity.two.asytree.AsyTreeActivity;
 import mars.all.activity.two.circlemenu.CircleMenuActivity;
 import mars.all.activity.two.eventBus.EventFirstActivity;
@@ -48,6 +50,7 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
         ItemDataAtMain item8 = new ItemDataAtMain("异步树", new Date());
         ItemDataAtMain item9 = new ItemDataAtMain("动态添加View", new Date());
         ItemDataAtMain item10 = new ItemDataAtMain("自定义View走马灯", new Date());
+        ItemDataAtMain item11 = new ItemDataAtMain("AndroidAnnotations的IOC依赖注入框架", new Date());
         items.add(item1);
         items.add(item2);
         items.add(item3);
@@ -58,6 +61,7 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
         items.add(item8);
         items.add(item9);
         items.add(item10);
+        items.add(item11);
         PictureAdapter pictureAdapter = new PictureAdapter(items, this);
         staggeredGridView.setAdapter(pictureAdapter);
         staggeredGridView.setOnItemClickListener(new OnItemClickListener() {
@@ -117,6 +121,10 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
                     case 8:
                         intent = new Intent(getApplicationContext(), AddViewActivity.class);
                         startActivity(intent);
+                        break;
+                    case 10: 
+                        AndroidAnnotationsTest_.intent(StaggeredGridViewChildTwo.this)
+                        .start();
                         break;
                     default:
                         break;
