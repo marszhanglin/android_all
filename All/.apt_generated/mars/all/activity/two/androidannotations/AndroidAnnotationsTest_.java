@@ -8,9 +8,10 @@ package mars.all.activity.two.androidannotations;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -64,7 +65,11 @@ public final class AndroidAnnotationsTest_
         return new AndroidAnnotationsTest_.IntentBuilder_(context);
     }
 
-    public static AndroidAnnotationsTest_.IntentBuilder_ intent(Fragment supportFragment) {
+    public static AndroidAnnotationsTest_.IntentBuilder_ intent(android.app.Fragment fragment) {
+        return new AndroidAnnotationsTest_.IntentBuilder_(fragment);
+    }
+
+    public static AndroidAnnotationsTest_.IntentBuilder_ intent(android.support.v4.app.Fragment supportFragment) {
         return new AndroidAnnotationsTest_.IntentBuilder_(supportFragment);
     }
 
@@ -93,13 +98,19 @@ public final class AndroidAnnotationsTest_
         extends ActivityIntentBuilder<AndroidAnnotationsTest_.IntentBuilder_>
     {
 
-        private Fragment fragmentSupport_;
+        private android.app.Fragment fragment_;
+        private android.support.v4.app.Fragment fragmentSupport_;
 
         public IntentBuilder_(Context context) {
             super(context, AndroidAnnotationsTest_.class);
         }
 
-        public IntentBuilder_(Fragment fragment) {
+        public IntentBuilder_(android.app.Fragment fragment) {
+            super(fragment.getActivity(), AndroidAnnotationsTest_.class);
+            fragment_ = fragment;
+        }
+
+        public IntentBuilder_(android.support.v4.app.Fragment fragment) {
             super(fragment.getActivity(), AndroidAnnotationsTest_.class);
             fragmentSupport_ = fragment;
         }
@@ -109,11 +120,23 @@ public final class AndroidAnnotationsTest_
             if (fragmentSupport_!= null) {
                 fragmentSupport_.startActivityForResult(intent, requestCode);
             } else {
-                if (context instanceof Activity) {
-                    Activity activity = ((Activity) context);
-                    ActivityCompat.startActivityForResult(activity, intent, requestCode, lastOptions);
+                if (fragment_!= null) {
+                    if (VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN) {
+                        fragment_.startActivityForResult(intent, requestCode, lastOptions);
+                    } else {
+                        fragment_.startActivityForResult(intent, requestCode);
+                    }
                 } else {
-                    context.startActivity(intent);
+                    if (context instanceof Activity) {
+                        Activity activity = ((Activity) context);
+                        ActivityCompat.startActivityForResult(activity, intent, requestCode, lastOptions);
+                    } else {
+                        if (VERSION.SDK_INT >= VERSION_CODES.JELLY_BEAN) {
+                            context.startActivity(intent, lastOptions);
+                        } else {
+                            context.startActivity(intent);
+                        }
+                    }
                 }
             }
         }

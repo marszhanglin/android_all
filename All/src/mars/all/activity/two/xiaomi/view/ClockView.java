@@ -89,9 +89,12 @@ public class ClockView extends View {
 
 	private float canvasRotateX = 0;
 	private float canvasRotateY = 0;
-
+	
+	/** 小时角度 0~360*/
 	private float rotateHourPointer = 0;
+	/** 分钟角度 0~360*/
 	private float rotateMinutePointer = 0;
+	/** 秒角度 0~360*/
 	private float rotateSecondPointer = 0;
 
 	private float scaleTextSize = 13;
@@ -106,9 +109,10 @@ public class ClockView extends View {
 
 	private float[] sweepGradientColorPos = new float[]{0f, 300f / 360f, 330f / 360f, 1f};
 	private int[] sweepGradientColors = new int[]{Color.TRANSPARENT, 0x80ffffff, 0xddffffff, Color.WHITE};
-
+	/** (属性动画  动画过渡 各类值管理) */
 	private ValueAnimator steadyAnim;
-	private ValueAnimator secondAnim;
+	/** 秒针属性动画  */
+	private ValueAnimator secondAnim;  
 
 	private Path pathTriangle;
 	private Path pathMinutePointer;
@@ -131,6 +135,7 @@ public class ClockView extends View {
 		init();
 	}
 
+	/** 在onresume() 后执行 */
 	@Override
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
@@ -139,12 +144,12 @@ public class ClockView extends View {
 		}
 //		startNewSecondAnim();
 
-		// register broadcast receiver
+		// register broadcast receiver   注册广播接收器
 		IntentFilter intentFilter = new IntentFilter();
-		intentFilter.addAction(Intent.ACTION_TIME_TICK);
-		intentFilter.addAction(Intent.ACTION_TIME_CHANGED);
-		intentFilter.addAction(Intent.ACTION_SCREEN_ON);
-		intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+		intentFilter.addAction(Intent.ACTION_TIME_TICK);//every minute  只能在代码中注册
+		intentFilter.addAction(Intent.ACTION_TIME_CHANGED);//The time was set. 系统设置时间时
+		intentFilter.addAction(Intent.ACTION_SCREEN_ON);//Sent after the screen turns on  屏幕打开时
+		intentFilter.addAction(Intent.ACTION_SCREEN_OFF);//Sent after the screen turns off 锁屏时
 		getContext().registerReceiver(receiver, intentFilter);
 	}
 
@@ -211,7 +216,7 @@ public class ClockView extends View {
 	private void drawContent(Canvas canvas) {
 		// Check rotate bound
 		if (rotateSecondPointer >= 360f) {
-			rotateSecondPointer %= 360f;
+			rotateSecondPointer %= 360f;//取余
 		}
 		if (rotateMinutePointer >= 360f) {
 			rotateMinutePointer %= 360f;
@@ -220,7 +225,7 @@ public class ClockView extends View {
 			rotateHourPointer %= 360f;
 		}
 
-		// Rotate ring sweep gradient
+		// Rotate ring sweep gradient  
 		matrixSweepGradient.setRotate(getProgressRingRotateDegree(), centerX, centerY);
 		sweepGradient.setLocalMatrix(matrixSweepGradient);
 		paintProgressRing.setShader(sweepGradient);
@@ -312,12 +317,24 @@ public class ClockView extends View {
 		canvasRotateY = canvasMaxRotateDegree * percentX;
 		canvasRotateX = -(canvasMaxRotateDegree * percentY);
 	}
-
+	/**
+	 * 
+	 * 描述 View 初始化
+	 * @author Mars zhang
+	 * @created 2016-1-28 下午5:03:50
+	 */
 	private void init() {
 		initValues();
 		startNewSecondAnim();
 	}
 
+	
+	/**
+	 * 
+	 * 描述  初始化所有变量值
+	 * @author Mars zhang
+	 * @created 2016-1-28 下午5:04:18
+	 */
 	private void initValues() {
 		// Colors
 		colorBg = 0xff237ead;
@@ -569,7 +586,13 @@ public class ClockView extends View {
 		sweepGradient = new SweepGradient(centerX, centerY, sweepGradientColors, sweepGradientColorPos);
 		paintProgressRing.setShader(sweepGradient);
 	}
-
+	
+	/**
+	 * 
+	 * 描述  开始秒针三角形动画
+	 * @author Mars zhang
+	 * @created 2016-1-28 下午5:06:05
+	 */
 	private void startNewSecondAnim() {
 		if (DEBUG) {
 			Log.d(TAG, "startNewSecondAnim");
@@ -581,7 +604,7 @@ public class ClockView extends View {
 		final float endDegree = 360f;
 		secondAnim = ValueAnimator.ofFloat(startDegree, endDegree);
 		// FIXME 不知为何某些机型动画实际执行时间是duration的一�?		// 在构造函数里启动动画就正常，在其他方法（如onAttachedToWindow或onSizeChanged）里调用本方法就不正�?		// 出问题的机型：小�?、小�?S
-		secondAnim.setDuration(60 * 1000);
+		secondAnim.setDuration(60 * 1000);  //间隔时间 1分钟
 		secondAnim.setInterpolator(new LinearInterpolator());
 		secondAnim.setRepeatMode(ValueAnimator.RESTART);
 		secondAnim.setRepeatCount(ValueAnimator.INFINITE);
@@ -624,7 +647,13 @@ public class ClockView extends View {
 		});
 		secondAnim.start();
 	}
-
+	
+	/**
+	 * 
+	 * 描述  取消三角形箭头动画
+	 * @author Mars zhang
+	 * @created 2016-1-28 下午6:04:48
+	 */
 	private void cancelSecondAnimIfNeed() {
 		if (secondAnim != null && (secondAnim.isStarted() || secondAnim.isRunning())) {
 			secondAnim.cancel();
@@ -635,30 +664,42 @@ public class ClockView extends View {
 	}
 
 	private void startNewSteadyAnim() {
+	  //PS：可操纵的属性参数：x/y；scaleX/scaleY；rotationX/ rotationY；transitionX/ transitionY等
 		final String propertyNameRotateX = "canvasRotateX";
 		final String propertyNameRotateY = "canvasRotateY";
-
+		/** PropertyValuesHolder保存了view的属性的信息以及在动画进行过程中该属性的值 */
 		PropertyValuesHolder holderRotateX = PropertyValuesHolder.ofFloat(propertyNameRotateX, canvasRotateX, 0);
 		PropertyValuesHolder holderRotateY = PropertyValuesHolder.ofFloat(propertyNameRotateY, canvasRotateY, 0);
 		steadyAnim = ValueAnimator.ofPropertyValuesHolder(holderRotateX, holderRotateY);
-		steadyAnim.setDuration(1000);
-		steadyAnim.setInterpolator(new BounceInterpolator());
-		steadyAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+		steadyAnim.setDuration(1000);//动画间隔一秒
+		steadyAnim.setInterpolator(new BounceInterpolator());//动画执行过度    动画结束的时候弹起
+		steadyAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {//动画监听 每一帧的状态
 			@Override
 			public void onAnimationUpdate(ValueAnimator animation) {
 				canvasRotateX = (Float) animation.getAnimatedValue(propertyNameRotateX);
 				canvasRotateY = (Float) animation.getAnimatedValue(propertyNameRotateY);
 			}
 		});
-		steadyAnim.start();
+		steadyAnim.start();  //开始属性动画
 	}
-
+	/**
+	 * 
+	 * 描述  取消属性动画
+	 * @author Mars zhang
+	 * @created 2016-1-28 下午5:49:23
+	 */
 	private void cancelSteadyAnimIfNeed() {
 		if (steadyAnim != null && (steadyAnim.isStarted() || steadyAnim.isRunning())) {
-			steadyAnim.cancel();
+			steadyAnim.cancel(); //取消属性动画
 		}
 	}
-
+	
+	/**
+	 * 
+	 * 描述  更新时分秒的角度
+	 * @author Mars zhang
+	 * @created 2016-1-28 下午6:09:16
+	 */
 	private void updateTimePointer() {
 		int second = Calendar.getInstance().get(Calendar.SECOND);
 		int minute = Calendar.getInstance().get(Calendar.MINUTE);
@@ -683,7 +724,11 @@ public class ClockView extends View {
 	public float sp2px(float spValue) {
 		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spValue, getResources().getDisplayMetrics());
 	}
-
+	
+	
+	/** 
+	 * 广播接收器   
+	 */
 	private BroadcastReceiver receiver = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
@@ -708,3 +753,22 @@ public class ClockView extends View {
 	};
 
 }
+
+
+/*
+ 
+ Android 官方提供的就是这么十种，是9种还是10种啊，没有数错吧。分别是：
+AccelerateDecelerateInterpolator 在动画开始与结束的地方速率改变比较慢，在中间的时候加速
+AccelerateInterpolator  在动画开始的地方速率改变比较慢，然后开始加速   
+AnticipateInterpolator 开始的时候向后然后向前甩
+AnticipateOvershootInterpolator 开始的时候向后然后向前甩一定值后返回最后的值
+BounceInterpolator   动画结束的时候弹起
+CycleInterpolator 动画循环播放特定的次数，速率改变沿着正弦曲线
+DecelerateInterpolator 在动画开始的地方快然后慢
+LinearInterpolator   常速  
+OvershootInterpolator    向前甩一定值后再回到原来位置
+PathInterpolator 这个是新增的我说原来怎么记得是9个，这个顾名思义就是可以定义路径坐标，然后可以按照路径坐标来跑动；注意其坐标并不是 XY，而是单方向，也就是我可以从0~1，然后弹回0.5 然后又弹到0.7 有到0.3，直到最后时间结束。（这个后面单独说说）
+ 
+ */
+
+

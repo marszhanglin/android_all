@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
     <application
@@ -60,6 +60,9 @@
         <activity android:name="mars.all.activity.two.eventBus.EventSecondActivity" >
         </activity>
         
+        <!-- AndroidAnnotations 依赖框架 -->
+        <activity android:name="mars.all.activity.two.androidannotations.AndroidAnnotationsTest_"></activity>
+        
         <!-- ViewGroup教程  -->
 		<activity android:name="mars.all.activity.two.viewgroup.FourSignViewGroupActivity" >
         </activity>
@@ -69,7 +72,8 @@
         </activity>
         <activity android:name="mars.all.activity.two.addview.AddViewActivity" >
         </activity>
-        
+        <activity android:name="mars.all.activity.two.circlemenu.CircleMenuActivity" >
+        </activity>
         <!-- 锁屏  解锁广播接收器 -->
         <!--
         <receiver android:name="mars.all.receive.LockScreenReceive">

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TTS</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="clear">清除</string>
+ 	<string name="search">查询</string>
+ 	<string name="speak">发音</string>
+ 	<string name="voide2text">语音转文字</string>
+</resources>

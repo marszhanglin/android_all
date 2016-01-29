@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_bg"
+    android:orientation="vertical"  >   
+	<Button 
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:onClick="download_a_url_to_a_string"
+	    android:text="Download a String from a url"
+	    />
+	<Button 
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:onClick="download_json_from_a_url"
+	    android:text="Download JSON from a url"
+	    />
+	<Button 
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:onClick="supports_socket_io"
+	    android:text="supports socket.io"
+	    /> 
+    
+    
+</LinearLayout> 

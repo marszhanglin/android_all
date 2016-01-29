@@ -1,8 +1,0 @@
-.settings
-bin
-libs
-gen
-build/
-.gradle/
-gradle.properties
-.idea/

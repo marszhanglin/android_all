@@ -9,5 +9,10 @@
 	<classpathentry kind="lib" path="libs/afinal_0.5.1_bin.jar"/>
 	<classpathentry kind="lib" path="libs/AndroidEasingFunctions-1.0.0.jar"/>
 	<classpathentry kind="lib" path="libs/nineoldandroids-2.4.0.jar"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
