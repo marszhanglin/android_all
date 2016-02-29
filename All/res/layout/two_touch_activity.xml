@@ -1,0 +1,19 @@
+<mars.all.activity.two.touch.FirstLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff0000" >
+
+    <mars.all.activity.two.touch.SecondLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:background="#f0f000" >
+
+        <mars.all.activity.two.touch.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="50dp"
+            android:background="#00f0f0" />
+    </mars.all.activity.two.touch.SecondLayout>
+
+</mars.all.activity.two.touch.FirstLayout>

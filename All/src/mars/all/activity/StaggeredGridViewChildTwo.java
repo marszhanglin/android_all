@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import mars.all.MainActivity;
 import mars.all.R;
 import mars.all.activity.two.addview.AddViewActivity;
 import mars.all.activity.two.androidannotations.AndroidAnnotationsTest_;
@@ -12,6 +11,7 @@ import mars.all.activity.two.asytree.AsyTreeActivity;
 import mars.all.activity.two.circlemenu.CircleMenuActivity;
 import mars.all.activity.two.eventBus.EventFirstActivity;
 import mars.all.activity.two.flinggallery.FlingGalleryActivity;
+import mars.all.activity.two.touch.TouchEventdispatchActivity;
 import mars.all.activity.two.tree.TreeActivity;
 import mars.all.activity.two.viewgroup.FourSignViewGroupActivity;
 import mars.all.activity.two.xiaomi.XiaomiClockActivity;
@@ -51,6 +51,7 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
         ItemDataAtMain item9 = new ItemDataAtMain("动态添加View", new Date());
         ItemDataAtMain item10 = new ItemDataAtMain("自定义View走马灯", new Date());
         ItemDataAtMain item11 = new ItemDataAtMain("AndroidAnnotations的IOC依赖注入框架", new Date());
+        ItemDataAtMain item12 = new ItemDataAtMain("Android Touch事件传递机制通俗讲解", new Date());
         items.add(item1);
         items.add(item2);
         items.add(item3);
@@ -62,6 +63,7 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
         items.add(item9);
         items.add(item10);
         items.add(item11);
+        items.add(item12);
         PictureAdapter pictureAdapter = new PictureAdapter(items, this);
         staggeredGridView.setAdapter(pictureAdapter);
         staggeredGridView.setOnItemClickListener(new OnItemClickListener() {
@@ -125,6 +127,10 @@ public class StaggeredGridViewChildTwo extends StaggeredGridViewActivity {
                     case 10: 
                         AndroidAnnotationsTest_.intent(StaggeredGridViewChildTwo.this)
                         .start();
+                        break;
+                    case 11:
+                        intent = new Intent(getApplicationContext(), TouchEventdispatchActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         break;
