@@ -6,6 +6,7 @@ import java.util.List;
 
 import mars.all.activity.NiftyDialogEffectsActivity;
 import mars.all.activity.StaggeredGridViewChildOne;
+import mars.all.activity.StaggeredGridViewChildThree;
 import mars.all.activity.StaggeredGridViewChildTwo;
 import mars.all.adapter.PictureAdapter;
 import mars.all.bean.ItemDataAtMain;
@@ -48,7 +49,7 @@ public class MainActivity extends Activity {
 		List<ItemDataAtMain> items=new ArrayList<ItemDataAtMain>();
 		ItemDataAtMain item1=new ItemDataAtMain("比较乱还未整理:\n瀑布流布局\nYOYO动画\n手势\n矩阵\nViewpager\n滑动浮动控件\n背景音乐", new Date());
 		ItemDataAtMain item2=new ItemDataAtMain("自定义View集合:", new Date());
-		ItemDataAtMain item3=new ItemDataAtMain("没用", new Date());
+		ItemDataAtMain item3=new ItemDataAtMain("鸿祥自定义View", new Date());
 		ItemDataAtMain item4=new ItemDataAtMain("各种Server", new Date());
 		ItemDataAtMain item5=new ItemDataAtMain("没用", new Date());
 		ItemDataAtMain item6=new ItemDataAtMain("没用", new Date());
@@ -88,6 +89,8 @@ public class MainActivity extends Activity {
 					startActivity(intent);
 					break;
 				case 2:
+				    intent=new Intent(getApplicationContext(), StaggeredGridViewChildThree.class);
+                    startActivity(intent);
 					break;
 				case 4: 
 					break;

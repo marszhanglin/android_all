@@ -14,11 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * 缩放的界面    1、实现OnGestureListener接口
- * 2014-7-22下午4:13:38 类AfnailPictureActivity
  * 
+ *   <br>1、实现OnGestureListener接口
+ *   <br>2、只能监测一个手指
  * @author Mars zhang
- * 
+ * @created 2016-2-29 下午8:03:13
  */
 public class GestureDetectorActivity extends Activity implements OnGestureListener {  
 
