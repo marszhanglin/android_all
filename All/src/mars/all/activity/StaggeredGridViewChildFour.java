@@ -5,9 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import mars.all.R;
-import mars.all.activity.three.three.HXView3Activity;
-import mars.all.activity.three.two.HXView2Activity;
-import mars.all.activity.three.vdhlayout.HXViewVDHActivity;
+import mars.all.activity.four.accessabilityservicebase1.Base1AccessibilityActivity;
+import mars.all.activity.four.slidemenu.SlideMenu1Activity;
 import mars.all.activity.two.addview.AddViewActivity;
 import mars.all.activity.two.androidannotations.AndroidAnnotationsTest_;
 import mars.all.activity.two.asytree.AsyTreeActivity;
@@ -16,6 +15,7 @@ import mars.all.activity.two.eventBus.EventFirstActivity;
 import mars.all.activity.two.touch.TouchEventdispatchActivity;
 import mars.all.activity.two.tree.TreeActivity;
 import mars.all.activity.two.viewgroup.FourSignViewGroupActivity;
+import mars.all.activity.two.xiaomi.XiaomiClockActivity;
 import mars.all.adapter.PictureAdapter;
 import mars.all.bean.ItemDataAtMain;
 import mars.all.view.StaggeredGridView.StaggeredGridView;
@@ -34,28 +34,18 @@ import com.daimajia.androidanimations.library.YoYo;
   * @author Mars zhang
   * @created 2016-2-29 下午8:38:53
   */
-public class StaggeredGridViewChildThree extends StaggeredGridViewActivity {
+public class StaggeredGridViewChildFour extends StaggeredGridViewActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        
         List<ItemDataAtMain> items = new ArrayList<ItemDataAtMain>();
-        ItemDataAtMain item1 = new ItemDataAtMain("<2>Android 自定义View (二) 进阶", new Date());
-        ItemDataAtMain item2 = new ItemDataAtMain("<3>Android 自定义View (二) 进阶，进度圈，音量", new Date());
-        ItemDataAtMain item3 = new ItemDataAtMain("自定义ViewGroup神器ViewDrawHelper", new Date());
-        ItemDataAtMain item4 = new ItemDataAtMain("EventBus使用组件间通信", new Date());
-        ItemDataAtMain item5 = new ItemDataAtMain("ViewGroup详解", new Date());
-        ItemDataAtMain item6 = new ItemDataAtMain("建行圆形导航", new Date());
-        ItemDataAtMain item7 = new ItemDataAtMain("树型", new Date());
-        ItemDataAtMain item8 = new ItemDataAtMain("异步树", new Date());
-        ItemDataAtMain item9 = new ItemDataAtMain("动态添加View", new Date());
-        ItemDataAtMain item10 = new ItemDataAtMain("自定义View走马灯", new Date());
-        ItemDataAtMain item11 = new ItemDataAtMain("AndroidAnnotations的IOC依赖注入框架", new Date());
-        ItemDataAtMain item12 = new ItemDataAtMain("Android Touch事件传递机制通俗讲解", new Date());
+        ItemDataAtMain item1 = new ItemDataAtMain("AccessibilityService 功能详解", new Date()); 
+        ItemDataAtMain item2 = new ItemDataAtMain("SlidingMenu \n使用详解\nDemo1", new Date()); 
         items.add(item1);
         items.add(item2);
-        items.add(item3);
-        /*items.add(item4);
+        /* items.add(item3);
+        items.add(item4);
         items.add(item5);
         items.add(item6);
         items.add(item7);
@@ -71,21 +61,22 @@ public class StaggeredGridViewChildThree extends StaggeredGridViewActivity {
             public void onItemClick(StaggeredGridView parent, View view, int position, long id) {
                 YoYo.with(Techniques.Tada).duration(700).playOn(view);
                 Toast.makeText(getApplicationContext(), "position:" + position, 0).show();
-
                 Intent intent = null;
                 switch (position) {
                     case 0:
                         intent=new Intent(getApplicationContext(),
-                        HXView2Activity.class); 
+                        Base1AccessibilityActivity.class); 
                         startActivity(intent);
                         break;
                     case 1:
-                        intent = new Intent(getApplicationContext(), HXView3Activity.class);
+                        intent = new Intent(getApplicationContext(), SlideMenu1Activity.class);
                         startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(getApplicationContext(), HXViewVDHActivity.class);
+                        intent = new Intent(getApplicationContext(), XiaomiClockActivity.class);
                         startActivity(intent);
+                        // 设置activity切换动画
+                        overridePendingTransition(R.anim.activity_in_heart, R.anim.activity_out_heart);
                         break;
                     case 3:
                         intent = new Intent(getApplicationContext(), EventFirstActivity.class);
@@ -114,7 +105,7 @@ public class StaggeredGridViewChildThree extends StaggeredGridViewActivity {
                         startActivity(intent);
                         break;
                     case 10: 
-                        AndroidAnnotationsTest_.intent(StaggeredGridViewChildThree.this)
+                        AndroidAnnotationsTest_.intent(StaggeredGridViewChildFour.this)
                         .start();
                         break;
                     case 11:

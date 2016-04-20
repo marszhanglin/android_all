@@ -1,4 +1,4 @@
-package mars.all.activity.three;
+package mars.all.activity.three.two;
 
 import mars.all.R;
 import android.content.Context;
@@ -9,7 +9,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
-import android.graphics.Path.FillType;
 import android.graphics.Rect;
 import android.text.TextPaint;
 import android.text.TextUtils;

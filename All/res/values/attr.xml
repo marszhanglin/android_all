@@ -8,7 +8,7 @@
         <attr name="rightPadding"></attr>
     </declare-styleable>
 
-    <!--  -->
+    <!-- 鸿祥自定义View 2 属性 start-->
     <attr name="titleText" format="string" />
     <attr name="titleTextSize" format="dimension" />
     <attr name="titleTextColor" format="color" />
@@ -26,6 +26,47 @@
         <attr name="image" />
         <attr name="imageScaleType" />
     </declare-styleable>
+	<!-- 鸿祥自定义View 2 属性 end-->
+    
+    
+    
+    
+    <!-- 鸿祥自定义View 3 属性 start-->
+    <attr name="firstColor" format="color" />
+    <attr name="secondColor" format="color" />
+    <attr name="circleWidth" format="dimension" />
+    <attr name="speed" format="integer" />
+     
 
+    <declare-styleable name="CircleProgressBar">
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <attr name="circleWidth" />
+        <attr name="speed" />
+    </declare-styleable>
+	<!-- 鸿祥自定义View 3 属性 end-->
+    
+    
+    
+    <!-- 鸿祥自定义View 4 属性 start-->  
+	<!-- 两个小块的颜色、一张中间的图片、间隙大小、一个多少个块块 -->
+	<attr name="firstColor4" format="color" />
+    <attr name="secondColor4" format="color" />
+    <attr name="circleWidth4" format="dimension" />
+    <attr name="dotCount4" format="integer" />
+    <attr name="splitSize4" format="integer" />
+    <attr name="bg4" format="integer" />
+    
+    <declare-styleable name="CircleVolume">
+        <attr name="firstColor4" />
+        <attr name="secondColor4" />
+        <attr name="circleWidth4" />
+        <attr name="dotCount4" />
+        <attr name="splitSize4" />
+        <attr name="bg4" />
+    </declare-styleable>
+	<!-- 鸿祥自定义View 3 属性 end-->
+    
+    
 </resources>
-<!-- 自定义属性 ??  string,color,demension,integer,enum,reference,float,boolean,fraction,flag;--> 
+<!-- 自定义属性 ??  string,color,"dimension",integer,enum,reference,float,boolean,fraction,flag;--> 

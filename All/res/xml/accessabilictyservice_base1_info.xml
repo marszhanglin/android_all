@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeAllMask"
+    android:accessibilityFeedbackType="feedbackSpoken"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/hello_world"
+    android:notificationTimeout="100"
+    android:packageNames="com.tencent.mm"
+    android:settingsActivity="com.example.android.accessibility.ServiceSettingsActivity" />
+
+    
+<!-- 
+
+这是一个AccessibilityService服务的配置，我们看下里面的参数。
+
+比较重要的有  android:accessibilityEventTypes="typeAllMask"
+
+看属性名也差不多可以明白，这个是用来设置响应事件的类型，typeAllMask当然就是响应所有类型的事件了
+。当然还有单击、长按、滑动等。 
+还有 android:accessibilityFeedbackType="feedbackSpoken"
+
+设置回馈给用户的方式，有语音播出和振动。可以配置一些TTS引擎，让它实现发音。
+
+另外android:notificationTimeout="100" 
+响应时间的设置就不用多说了
+
+还有一个重要属性这里没有用到，就是
+
+    android:packageNames="com.example.android.apis"
+
+可以指定响应某个应用的事件，这里因为要响应所有应用的事件，所以不填，默认就是响应所有应用的事件。
+比如说要写一个微信抢红包的辅助程序，就可以在这里填写微信的包名，便可以监听微信产生的事件了。
+
+
+ -->

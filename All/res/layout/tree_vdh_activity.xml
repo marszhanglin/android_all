@@ -1,0 +1,46 @@
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mars="http://schemas.android.com/apk/res/mars.all" >
+ 
+        <mars.all.activity.three.vdhlayout.VdhLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"   >
+			
+            <TextView
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:background="@drawable/rectradius"
+                android:text="我可被拖动"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="aaa"
+                android:clickable="true"
+                />
+                 
+            <mars.all.activity.three.three.CircleVolumeView
+                mars:firstColor4="#ffffff"
+                mars:secondColor4="#252420"
+                mars:circleWidth4="12dp" 
+                mars:dotCount4="30"
+                mars:splitSize4="8"
+                mars:bg4="@drawable/ic_launcher" 
+                android:layout_width="200dp"
+               	android:layout_height="200dp" 
+               	android:background="@drawable/rectradius"
+                >  
+                 </mars.all.activity.three.three.CircleVolumeView>
+            
+            <Button 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="性能测试" 
+                android:background="@drawable/rectradius"
+                android:onClick="aaa"
+                />
+        </mars.all.activity.three.vdhlayout.VdhLayout>
+    
+
+</merge>

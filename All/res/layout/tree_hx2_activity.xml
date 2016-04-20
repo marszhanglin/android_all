@@ -12,7 +12,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
-            <mars.all.activity.three.CustomImageView
+            <mars.all.activity.three.two.CustomImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:padding="10dp"
@@ -22,7 +22,7 @@
                 mars:titleTextColor="#ff00ff"
                 mars:titleTextSize="11sp" />
 
-            <mars.all.activity.three.CustomImageView
+            <mars.all.activity.three.two.CustomImageView
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:padding="10dp"
@@ -32,7 +32,7 @@
                 mars:titleTextColor="#ff0000"
                 mars:titleTextSize="14sp" />
 
-            <mars.all.activity.three.CustomImageView
+            <mars.all.activity.three.two.CustomImageView
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:padding="10dp"
@@ -42,7 +42,7 @@
                 mars:titleTextColor="#00ffff"
                 mars:titleTextSize="17sp" />
 
-            <mars.all.activity.three.CustomImageView
+            <mars.all.activity.three.two.CustomImageView
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:padding="10dp"

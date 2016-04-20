@@ -6,4 +6,8 @@
     <dimen name="dialog_padding">25dp</dimen>
     <dimen name="widget_margin">8dp</dimen>
     <dimen name="widget_text_height">22dp</dimen> 
+    
+    
+        <dimen name="slidingmenu_offset">80dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
 </resources>
