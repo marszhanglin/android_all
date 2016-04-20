@@ -83,8 +83,34 @@
         <!-- three -->
         <activity android:name="mars.all.activity.StaggeredGridViewChildThree" >
         </activity>
-        <activity android:name="mars.all.activity.three.HXView2Activity" >
+        <activity android:name="mars.all.activity.three.two.HXView2Activity" >
         </activity>
+        <activity android:name="mars.all.activity.three.three.HXView3Activity" >
+        </activity>
+        <activity android:name="mars.all.activity.three.vdhlayout.HXViewVDHActivity" >
+        </activity>
+        
+        
+        <!-- four -->
+        <activity android:name="mars.all.activity.StaggeredGridViewChildFour" >
+        </activity>
+        <activity android:name="mars.all.activity.four.accessabilityservicebase1.Base1AccessibilityActivity" >
+        </activity> 
+        <service
+            android:name="mars.all.activity.four.accessabilityservicebase1.BaseAccessibilityService"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessabilictyservice_base1_info" />
+        </service>
+        <activity android:name="mars.all.activity.four.slidemenu.SlideMenu1Activity" >
+        </activity> 
+        
+        
         
         <!-- 锁屏  解锁广播接收器 -->
         <!--
