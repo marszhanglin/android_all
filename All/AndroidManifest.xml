@@ -79,6 +79,9 @@
         <activity android:name="mars.all.activity.two.touch.TouchEventdispatchActivity" >
         </activity>
         
+        <!-- one -->
+        <activity android:name="mars.all.activity.one.timeline.TimeLineActivity" >
+        </activity>
         
         <!-- three -->
         <activity android:name="mars.all.activity.StaggeredGridViewChildThree" >

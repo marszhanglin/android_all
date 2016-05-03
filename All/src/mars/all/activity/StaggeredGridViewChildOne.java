@@ -14,6 +14,7 @@ import mars.all.activity.at_staggeredgrid.viewpager.DifferentViewPagerActivity;
 import mars.all.activity.at_staggeredgrid.viewpager.MyviewPagerActivity;
 import mars.all.activity.at_staggeredgrid.viewpager.MyviewPagerActivity01;
 import mars.all.activity.mediaplay.MediaActivity;
+import mars.all.activity.one.timeline.TimeLineActivity;
 import mars.all.adapter.PictureAdapter;
 import mars.all.bean.ItemDataAtMain;
 import mars.all.view.StaggeredGridView.StaggeredGridView;
@@ -50,6 +51,7 @@ public class StaggeredGridViewChildOne extends StaggeredGridViewActivity {
 		ItemDataAtMain item9=new ItemDataAtMain("activity的启动机制", new Date());
 		ItemDataAtMain item10=new ItemDataAtMain("HoveringScroll浮动的View", new Date());
 		ItemDataAtMain item11=new ItemDataAtMain("背景音乐及activity的生命周期使用", new Date());
+		ItemDataAtMain item12=new ItemDataAtMain("纵向时间轴效果", new Date());
 		items.add(item1);
 		items.add(item2);
 		items.add(item3);
@@ -61,6 +63,7 @@ public class StaggeredGridViewChildOne extends StaggeredGridViewActivity {
 		items.add(item9);
 		items.add(item10);
 		items.add(item11);
+		items.add(item12);
         PictureAdapter pictureAdapter = new PictureAdapter(items,
                 this);
         staggeredGridView.setAdapter(pictureAdapter);
@@ -113,9 +116,13 @@ public class StaggeredGridViewChildOne extends StaggeredGridViewActivity {
 					intent=new Intent(getApplicationContext(), MediaActivity.class);
 					startActivity(intent);
 					break;
+				case 11:
+                    intent=new Intent(getApplicationContext(), TimeLineActivity.class);
+                    startActivity(intent);
+                    break;
 				default:
 					break;
-				} 
+				}
 			}
 		});
         pictureAdapter.notifyDataSetChanged();
